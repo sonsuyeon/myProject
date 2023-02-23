@@ -18,6 +18,7 @@ li {
 }
 
 a {
+  font-size: inherit;
   color: inherit;
   text-decoration: none;
 }
@@ -47,7 +48,6 @@ section {
   background-image: url(../images/bg3.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding-top: 100px;
 }
 .intro::after {
   position: absolute;
@@ -170,6 +170,7 @@ section {
 .about__tle {
   font-size: 36px;
   margin-bottom: 24px;
+  color: #292929;
 }
 .about__inner {
   max-width: 1000px;
@@ -271,6 +272,9 @@ section {
   font-weight: 100;
   margin-bottom: 24px;
 }
+.about-intro__desc-inner:last-child {
+  margin-bottom: 0;
+}
 
 /*========================
 ========  myskill ========
@@ -288,6 +292,7 @@ section {
 .myskill__tle {
   font-size: 36px;
   margin-bottom: 24px;
+  color: #292929;
 }
 
 .myskill-top {
@@ -322,6 +327,10 @@ section {
 }
 .myskill-bottom__item {
   width: auto;
+  margin-left: 0;
+}
+.myskill-bottom__name {
+  font-weight: 400;
 }
 
 /*========================
@@ -341,6 +350,7 @@ section {
   font-weight: bold;
   margin-bottom: 30px;
   text-transform: uppercase;
+  color: #292929;
 }
 .myWork__name {
   font-size: 30px;
@@ -363,7 +373,7 @@ section {
   display: flex;
   padding: 25px;
   border-radius: 10px;
-  border: 1px solid #dedede;
+  border: 1px solid;
 }
 .myWork__thum {
   position: relative;
@@ -388,7 +398,7 @@ section {
   width: 100%;
   height: 100%;
   background-image: url(../images/ico/scroll.png);
-  background-color: rgb(205 205 205 / 20%);
+  background-color: rgba(135, 135, 135, 0.2);
   background-size: 40px 40px;
   background-repeat: no-repeat;
   background-position: center 50%;
@@ -448,6 +458,7 @@ section {
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
+  color: #292929;
 }
 .myStudy__inner {
   max-width: 1000px;
@@ -455,14 +466,16 @@ section {
 }
 .myStudy__list {
   display: flex;
-  margin: 24px -10px 0;
+  gap: 10px;
+  margin: 24px auto 0;
 }
 .myStudy__item {
   width: calc(25% - 10px);
-  margin: 0 5px;
+  margin: 0;
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
+  word-break: keep-all;
 }
 
 /*========================
@@ -482,4 +495,99 @@ section {
 }
 .footer__desc-copy {
   font-size: 14px;
-} /*# sourceMappingURL=style.css.map */
+}
+
+@media only screen and (max-width: 1000px) {
+  .intro__inner,
+  .about__inner,
+  .myskill__inner,
+  .myWork__inner,
+  .myStudy__inner {
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .intro,
+  .about,
+  .myskill,
+  .myWork,
+  .myStudy {
+    padding-top: 36px;
+  }
+  .intro__tle,
+  .about__tle,
+  .myskill__tle,
+  .myWork__tle,
+  .myStudy__tle {
+    margin-bottom: 12px;
+  }
+  .intro__top {
+    font-size: 28px;
+  }
+  .intro__coding {
+    font-size: 20px;
+  }
+  .intro__coding-left {
+    margin-left: 50px;
+  }
+  /*========================
+  ========  about ========
+  ========================*/
+  .about {
+    padding-top: 36px;
+  }
+  .about__wrap {
+    display: block;
+  }
+  .about-more {
+    margin: 16px auto;
+  }
+  .about-intro {
+    margin-bottom: 36px;
+  }
+  .about-intro__desc-inner {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  /*========================
+  ========  myskill ========
+  ========================*/
+  .myskill {
+    padding-bottom: 0;
+  }
+  .myskill-top__list {
+    flex-direction: column;
+  }
+  .myskill-top__item {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  /*========================
+  ========  mywork ========
+  ========================*/
+  .myWork__thum {
+    width: 100%;
+    height: 300px;
+  }
+  .myWork__innerWrap {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .myWork__right {
+    width: 100%;
+    margin-top: 12px;
+    padding: 0;
+  }
+  .myWork-desc__item {
+    margin-bottom: 24px;
+  }
+  /*========================
+  ========  myStudy ========
+  ========================*/
+  .myStudy__list {
+    flex-wrap: wrap;
+  }
+  .myStudy__item {
+    margin-bottom: 5px;
+  }
+}/*# sourceMappingURL=style.css.map */
