@@ -26,14 +26,18 @@ button {
   border: transparent;
   background: transparent;
 }
+img {
+  vertical-align: middle;
+}
 .wrap {
   width: 100%;
 }
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // min-height: 100vh;
+  margin-bottom: 80px;
 }
 
 /* intro */
@@ -41,6 +45,10 @@ section {
   position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-image: url(../images/bg3.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -160,7 +168,7 @@ section {
 .about {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
   &__tle {
     font-size: 36px;
     margin-bottom: 24px;
@@ -285,6 +293,9 @@ section {
     font-size: 36px;
     margin-bottom: 24px;
     color: #292929;
+    &-more {
+      font-size: 24px;
+    }
   }
 }
 .myskill-top {
@@ -327,12 +338,61 @@ section {
 }
 
 /*========================
+========  myProject ========
+========================*/
+.myProject {
+  display: block;
+  min-height: auto;
+  &__inner {
+    max-width: 1000px;
+    width: 100%;
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__hover {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  &__item {
+    position: relative;
+    width: 50%;
+    max-width: 350px;
+    box-shadow: 3px 3px 15px rgb(170 170 170 / 20%);
+    margin-bottom: 24px;
+    &:hover {
+      .myProject__hover {
+        display: flex;
+      }
+    }
+  }
+  &__thum {
+    width: 100%;
+    height: 240px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+/*========================
 ========  mywork ========
 ========================*/
 .myWork {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
   &__inner {
     max-width: 1000px;
     margin: 0 auto;
@@ -345,8 +405,8 @@ section {
     color: #292929;
   }
   &__name {
-    font-size: 30px;
-    margin-bottom: 24px;
+    font-size: 36px;
+    margin-bottom: 18px;
     text-align: center;
     &-sub {
       display: block;
@@ -361,12 +421,74 @@ section {
     margin-bottom: 24px;
     min-height: 600px;
   }
-  &__innerWrap {
-    display: flex;
-    padding: 25px;
+  &__cont {
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 24px;
+    min-height: 600px;
+  }
+  &__window {
+    width: 100%;
+    height: 100%;
+    padding-top: 29px;
     // background: rgb(127 209 255 / 40%);
     border-radius: 10px;
-    border: 1px solid;
+    border: 1px solid transparent;
+    background-image: url(../images/scoll_Section.png);
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 3px 3px 15px rgb(170 170 170 / 20%);
+    margin-bottom: 24px;
+    box-sizing: border-box;
+  }
+  &__window-thum {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    border: transparent;
+    cursor: grab;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/ico/scroll.png);
+      background-color: rgba(135, 135, 135, 0.2);
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      background-position: center 50%;
+      z-index: 10;
+    }
+    &:hover::after {
+      display: none;
+    }
+    &-img {
+      width: 100%;
+    }
+  }
+  &__innerWrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 25px;
+    padding-top: 50px;
+    // background: rgb(127 209 255 / 40%);
+    border-radius: 10px;
+    border: 1px solid #f2f2f2;
+    background-image: url(../images/scoll_Section.png);
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 3px 3px 15px rgb(170 170 170 / 20%);
   }
   &__thum {
     position: relative;
@@ -375,7 +497,7 @@ section {
     height: 400px;
     overflow-y: auto;
     cursor: grab;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #f2f2f2;
     border-radius: 4px;
     box-sizing: border-box;
     &::-webkit-scrollbar {
@@ -407,18 +529,33 @@ section {
     max-width: 350px;
   }
   &__more {
+    margin-bottom: 24px;
     &-btn {
       cursor: pointer;
       font-size: 14px;
       padding: 8px 16px;
-      color: #000080;
+      color: #292929;
       background: yellow;
+      border-radius: 10px;
       margin-right: 5px;
     }
   }
   &__right {
     width: 50%;
     padding: 20px;
+  }
+  &__ico {
+    &-close {
+      position: fixed;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      right: 24px;
+      top: 24px;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 .myWork-desc {
@@ -451,7 +588,7 @@ section {
 .myStudy {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
   &__tle {
     font-size: 30px;
     font-weight: bold;
@@ -464,6 +601,7 @@ section {
   }
   &__list {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 24px auto 0;
   }

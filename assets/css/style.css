@@ -29,15 +29,16 @@ button {
   background: transparent;
 }
 
+img {
+  vertical-align: middle;
+}
+
 .wrap {
   width: 100%;
 }
 
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  margin-bottom: 80px;
 }
 
 /* intro */
@@ -45,6 +46,10 @@ section {
   position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-image: url(../images/bg3.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -165,7 +170,7 @@ section {
 .about {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
 }
 .about__tle {
   font-size: 36px;
@@ -294,6 +299,9 @@ section {
   margin-bottom: 24px;
   color: #292929;
 }
+.myskill__tle-more {
+  font-size: 24px;
+}
 
 .myskill-top {
   margin-bottom: 24px;
@@ -334,12 +342,60 @@ section {
 }
 
 /*========================
+========  myProject ========
+========================*/
+.myProject {
+  display: block;
+  min-height: auto;
+}
+.myProject__inner {
+  max-width: 1000px;
+  width: 100%;
+}
+.myProject__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.myProject__hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.myProject__item {
+  position: relative;
+  width: 50%;
+  max-width: 350px;
+  box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
+  margin-bottom: 24px;
+}
+.myProject__item:hover .myProject__hover {
+  display: flex;
+}
+.myProject__thum {
+  width: 100%;
+  height: 240px;
+}
+.myProject__thum img {
+  width: 100%;
+  height: 100%;
+}
+
+/*========================
 ========  mywork ========
 ========================*/
 .myWork {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
 }
 .myWork__inner {
   max-width: 1000px;
@@ -353,8 +409,8 @@ section {
   color: #292929;
 }
 .myWork__name {
-  font-size: 30px;
-  margin-bottom: 24px;
+  font-size: 36px;
+  margin-bottom: 18px;
   text-align: center;
 }
 .myWork__name-sub {
@@ -369,11 +425,72 @@ section {
   margin-bottom: 24px;
   min-height: 600px;
 }
+.myWork__cont {
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 24px;
+  min-height: 600px;
+}
+.myWork__window {
+  width: 100%;
+  height: 100%;
+  padding-top: 29px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-image: url(../images/scoll_Section.png);
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+.myWork__window-thum {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow-y: auto;
+  border: transparent;
+  cursor: grab;
+  box-sizing: border-box;
+}
+.myWork__window-thum::-webkit-scrollbar {
+  display: none;
+}
+.myWork__window-thum::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/ico/scroll.png);
+  background-color: rgba(135, 135, 135, 0.2);
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  z-index: 10;
+}
+.myWork__window-thum:hover::after {
+  display: none;
+}
+.myWork__window-thum-img {
+  width: 100%;
+}
 .myWork__innerWrap {
+  width: 100%;
+  height: 100%;
   display: flex;
   padding: 25px;
+  padding-top: 50px;
   border-radius: 10px;
-  border: 1px solid;
+  border: 1px solid #f2f2f2;
+  background-image: url(../images/scoll_Section.png);
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
 }
 .myWork__thum {
   position: relative;
@@ -382,7 +499,7 @@ section {
   height: 400px;
   overflow-y: auto;
   cursor: grab;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #f2f2f2;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -413,17 +530,32 @@ section {
 .myWork__thum3 {
   max-width: 350px;
 }
+.myWork__more {
+  margin-bottom: 24px;
+}
 .myWork__more-btn {
   cursor: pointer;
   font-size: 14px;
   padding: 8px 16px;
-  color: #000080;
+  color: #292929;
   background: yellow;
+  border-radius: 10px;
   margin-right: 5px;
 }
 .myWork__right {
   width: 50%;
   padding: 20px;
+}
+.myWork__ico-close {
+  position: fixed;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  right: 24px;
+  top: 24px;
+}
+.myWork__ico-close img {
+  width: 100%;
 }
 
 .myWork-desc__item {
@@ -452,7 +584,7 @@ section {
 .myStudy {
   box-sizing: border-box;
   display: block;
-  padding-top: 90px;
+  padding-top: 56px;
 }
 .myStudy__tle {
   font-size: 30px;
@@ -466,6 +598,7 @@ section {
 }
 .myStudy__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 24px auto 0;
 }
