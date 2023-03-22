@@ -227,6 +227,23 @@
     margin: 0 32px 0 0;
     border-radius: 10px;
     border: 1px solid #ddd;
+    &.swiper-container {
+      margin: 0 32px 0 0;
+    }
+    &-list {
+      display: flex;
+    }
+    &-item {
+      max-width: 700px;
+      width: 100%;
+    }
+    &-img {
+      max-width: 700px;
+      width: 100%;
+      margin: 0 32px 0 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
   }
   &__thum-m {
     max-width: 500px;
@@ -254,6 +271,31 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .myPort-page {
+    &__inner {
+      flex-direction: column;
+      &.myPort-page__second {
+        flex-direction: column;
+        .myPort-page__txt {
+          margin-right: 32px;
+          margin-left: 24px;
+        }
+      }
+    }
+    &__thum {
+      margin: 0 auto 24px;
+    }
+    &__txt {
+      width: 100%;
+    }
+  }
+  .myPort-desc {
+    &__item {
+      margin-bottom: 4px;
+    }
+  }
+}
 @media only screen and (max-width: 768px) {
   .myPort {
     padding-top: 32px;

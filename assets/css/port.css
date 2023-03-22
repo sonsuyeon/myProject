@@ -221,6 +221,23 @@
   border-radius: 10px;
   border: 1px solid #ddd;
 }
+.myPort-page__thum.swiper-container {
+  margin: 0 32px 0 0;
+}
+.myPort-page__thum-list {
+  display: flex;
+}
+.myPort-page__thum-item {
+  max-width: 700px;
+  width: 100%;
+}
+.myPort-page__thum-img {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 32px 0 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
 .myPort-page__thum-m {
   max-width: 500px;
 }
@@ -245,6 +262,27 @@
   color: #a37a7a;
 }
 
+@media screen and (max-width: 1000px) {
+  .myPort-page__inner {
+    flex-direction: column;
+  }
+  .myPort-page__inner.myPort-page__second {
+    flex-direction: column;
+  }
+  .myPort-page__inner.myPort-page__second .myPort-page__txt {
+    margin-right: 32px;
+    margin-left: 24px;
+  }
+  .myPort-page__thum {
+    margin: 0 auto 24px;
+  }
+  .myPort-page__txt {
+    width: 100%;
+  }
+  .myPort-desc__item {
+    margin-bottom: 4px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .myPort {
     padding-top: 32px;
