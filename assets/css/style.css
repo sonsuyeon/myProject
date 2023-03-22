@@ -640,6 +640,9 @@ section {
   }
 }
 @media only screen and (max-width: 768px) {
+  section {
+    margin-bottom: 36px;
+  }
   .intro,
   .about,
   .myskill,
@@ -721,6 +724,33 @@ section {
     flex-wrap: wrap;
   }
   .myStudy__item {
+    width: calc(50% - 10px);
     margin-bottom: 5px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /*========================
+  ========  myProject ========
+  ========================*/
+  .myProject {
+    display: block;
+    min-height: auto;
+  }
+  .myProject__inner {
+    padding: 0 12px;
+  }
+  .myProject__item {
+    width: 100%;
+    max-width: 500px;
+  }
+  .myProject__thum {
+    height: 300px;
+  }
+  /*========================
+  ========  myStudy ========
+  ========================*/
+  .myStudy__item {
+    width: calc(100% - 10px);
+    margin-bottom: 0px;
   }
 }/*# sourceMappingURL=style.css.map */
