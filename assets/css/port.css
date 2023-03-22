@@ -219,8 +219,9 @@
   width: 100%;
   margin: 0 32px 0 0;
   border-radius: 10px;
+  border: 1px solid #ddd;
 }
-.myPort-page__thum__thum-m {
+.myPort-page__thum-m {
   max-width: 500px;
 }
 .myPort-page__tle {
