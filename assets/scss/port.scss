@@ -24,7 +24,7 @@
     }
   }
   &__name {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 16px;
     text-align: center;
     &-sub {
@@ -33,6 +33,12 @@
       margin-bottom: 4px;
       text-align: center;
     }
+  }
+  &__head {
+    font-size: 44px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 24px;
   }
   &__thum {
     width: 100%;
@@ -92,38 +98,36 @@
       height: 500px;
     }
   }
-  &__cont {
+  &__summary {
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: 24px;
-    min-height: 600px;
   }
   &__more {
-    max-width: 1200px;
     margin-bottom: 36px;
     &-link {
       cursor: pointer;
       font-size: 14px;
       padding: 8px 16px;
-      color: #292929;
-      background: yellow;
+      color: #fff;
+      background: rgb(31, 97, 132);
       border-radius: 10px;
       margin-right: 5px;
-      margin-bottom: 5px;
+      box-shadow: 3px 3px 7px rgba(31, 97, 132, 0.4);
     }
     &-txt {
       font-size: 14px;
-      margin-top: 10px;
+      margin-top: 16px;
     }
   }
   &__tle {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 16px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #292929;
   }
-  &__summary {
+  &__overView {
     margin-bottom: 24px;
   }
 }
@@ -151,25 +155,25 @@
       margin-right: 5px;
     }
   }
-  &__item {
-  }
 }
-.myPort-page {
+.myPort-site {
   &__list {
     width: 100%;
     display: flex;
+    justify-content: space-between;
   }
   &__item {
     height: 100%;
-    border: 1px solid;
+    border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
-    &.myPort-page__pc {
+    &.myPort-site__pc {
       width: calc(70% - 12px);
     }
-    &.myPort-page__m {
-      width: calc(30% - 2px);
+    &.myPort-site__m {
+      width: calc(30% - 12px);
+      margin: 0;
     }
     img {
       width: 100%;
@@ -203,6 +207,52 @@
     padding-left: 24px;
   }
 }
+.myPort-page {
+  &__inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 36px;
+    &.myPort-page__second {
+      padding: 0;
+      flex-direction: row-reverse;
+      .myPort-page__txt {
+        margin-right: 32px;
+      }
+    }
+  }
+  &__thum {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 32px 0 0;
+    border-radius: 10px;
+    &__thum-m {
+      max-width: 500px;
+    }
+  }
+
+  &__tle {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  &__item {
+    margin-bottom: 24px;
+  }
+  &__txt {
+    margin: 0;
+  }
+  &__text {
+    font-size: 18px;
+    margin: 0;
+  }
+  &__skill {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #a37a7a;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .myPort {
     padding-top: 32px;
