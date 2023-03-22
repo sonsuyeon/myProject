@@ -648,7 +648,7 @@ section {
   .myskill,
   .myWork,
   .myStudy {
-    padding-top: 36px;
+    padding-top: 24px;
   }
   .intro__tle,
   .about__tle,
@@ -665,6 +665,62 @@ section {
   }
   .intro__coding-left {
     margin-left: 50px;
+  }
+  /*========================
+  ========  about ========
+  ========================*/
+  .about {
+    padding-top: 36px;
+  }
+  .about__tle {
+    font-size: 28px;
+  }
+  .about__wrap {
+    display: block;
+  }
+  .about-left {
+    margin: 0 auto;
+  }
+  .about-profile {
+    width: 180px;
+    height: 180px;
+    background-size: 120px;
+  }
+  .about-keyword {
+    margin: 12px 0 32px;
+  }
+  .about-keyword__item {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 20px;
+    font-style: italic;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .about-keyword__item:hover {
+    background: rgb(110, 110, 110);
+  }
+  .about-keyword__item::before {
+    display: inline-block;
+    content: "#";
+  }
+  .about-more {
+    display: none;
+  }
+  .about-intro__top {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .about-intro__name {
+    font-size: 20px;
+  }
+  .about-intro__desc {
+    padding-right: 0;
+  }
+  .about-intro__desc-inner {
+    font-size: 16px;
   }
   /*========================
   ========  about ========
@@ -690,6 +746,9 @@ section {
   ========================*/
   .myskill {
     padding-bottom: 0;
+  }
+  .myskill-top {
+    margin-bottom: 0;
   }
   .myskill-top__list {
     flex-direction: column;

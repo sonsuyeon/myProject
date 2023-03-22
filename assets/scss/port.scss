@@ -35,10 +35,12 @@
     }
   }
   &__head {
+    color: #292929;
     font-size: 44px;
     text-transform: capitalize;
     text-align: center;
     margin-bottom: 24px;
+    letter-spacing: -1px;
   }
   &__thum {
     width: 100%;
@@ -284,7 +286,7 @@
       }
     }
     &__thum {
-      margin: 0 auto 24px;
+      margin: 0 auto 16px;
     }
     &__txt {
       width: 100%;
@@ -297,10 +299,82 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  /*========================
+========  mywork ========
+========================*/
   .myPort {
     padding-top: 32px;
+    overflow: hidden;
     &__inner {
-      padding: 0 24px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+    &__ico {
+      &-close {
+        width: 24px;
+        height: 24px;
+        right: 12px;
+        top: 12px;
+      }
+    }
+    &__name {
+      font-size: 32px;
+    }
+    &__head {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    &__thum {
+      padding-top: 16px;
+    }
+    &__thum-img {
+      height: 350px;
+      &::after {
+        display: none;
+      }
+    }
+    &__thum-doguri {
+      max-width: 320px;
+      padding-top: 0;
+      background: none;
+      box-sizing: border-box;
+      &__thum-img {
+        width: 100%;
+        height: 500px;
+      }
+    }
+    &__summary {
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    &__more {
+      margin-bottom: 36px;
+      &-link {
+        cursor: pointer;
+        font-size: 14px;
+        padding: 8px 16px;
+        color: #fff;
+        background: rgb(31, 97, 132);
+        border-radius: 10px;
+        margin-right: 5px;
+        box-shadow: 3px 3px 7px rgba(31, 97, 132, 0.4);
+      }
+      &-txt {
+        font-size: 14px;
+        margin-top: 16px;
+      }
+    }
+    &__tle {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      text-transform: capitalize;
+      color: #292929;
+    }
+    &__overView {
+      margin-bottom: 24px;
     }
   }
   .myPort-section {
@@ -319,6 +393,35 @@
       padding-left: 0;
       text-align: left;
       margin-top: 16px;
+    }
+  }
+  .myPort-page {
+    &__thum {
+      &-list {
+        display: flex;
+      }
+      &-item {
+        max-width: 700px;
+        width: 100%;
+      }
+      &-img {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 32px 0 0;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+      }
+    }
+    &__tle {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    &__item {
+      margin-bottom: 16px;
+    }
+    &__skill {
+      display: block;
+      font-size: 20px;
     }
   }
 }

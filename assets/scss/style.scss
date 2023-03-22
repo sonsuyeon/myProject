@@ -655,7 +655,7 @@ section {
   .myskill,
   .myWork,
   .myStudy {
-    padding-top: 36px;
+    padding-top: 24px;
     &__tle {
       margin-bottom: 12px;
     }
@@ -674,6 +674,66 @@ section {
       margin-left: 50px;
     }
   }
+
+  /*========================
+========  about ========
+========================*/
+  .about {
+    padding-top: 36px;
+    &__tle {
+      font-size: 28px;
+    }
+    &__wrap {
+      display: block;
+    }
+  }
+  .about-left {
+    margin: 0 auto;
+  }
+  .about-profile {
+    width: 180px;
+    height: 180px;
+    background-size: 120px;
+  }
+  .about-keyword {
+    margin: 12px 0 32px;
+    &__item {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 20px;
+      font-style: italic;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: rgb(110, 110, 110);
+      }
+      &::before {
+        display: inline-block;
+        content: "#";
+      }
+    }
+  }
+  .about-more {
+    display: none;
+  }
+  .about-intro {
+    &__top {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    &__name {
+      font-size: 20px;
+    }
+    &__desc {
+      padding-right: 0;
+      &-inner {
+        font-size: 16px;
+      }
+    }
+  }
+
   /*========================
   ========  about ========
   ========================*/
@@ -700,6 +760,7 @@ section {
     padding-bottom: 0;
   }
   .myskill-top {
+    margin-bottom: 0;
     &__list {
       flex-direction: column;
     }
@@ -708,7 +769,6 @@ section {
       margin-bottom: 16px;
     }
   }
-
   /*========================
 ========  mywork ========
 ========================*/
