@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>suuyom's portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/port.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css"
-    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="./assets/js/common.js"></script>
   </head>
   <body>
     <div class="myPort" id="myPort">
@@ -74,6 +71,7 @@
           <div class="myPort-page__inner">
             <img
               class="myPort-page__thum"
+              data-aos="fade-right"
               src="./assets/images/berovel/main_banner.png"
               alt="메인페이지"
             />
@@ -93,6 +91,7 @@
           <div class="myPort-page__inner myPort-page__second">
             <img
               class="myPort-page__thum"
+              data-aos="fade-left"
               src="./assets/images/berovel/main_sec1.png"
               alt="메인섹션"
             />
@@ -111,6 +110,7 @@
           <h4 class="myPort-page__tle">작품소개 페이지</h4>
           <div class="myPort-page__inner">
             <img
+              data-aos="fade-right"
               class="myPort-page__thum"
               src="./assets/images/berovel/work1.png"
               alt="작품"
@@ -140,7 +140,7 @@
           </div>
           <h4 class="myPort-page__tle">작품읽기 페이지</h4>
           <div class="myPort-page__inner">
-            <div class="myPort-page__thum swiper-container">
+            <div class="myPort-page__thum swiper-container" data-aos="fade-up">
               <ul class="myPort-page__thum-list swiper-wrapper">
                 <li class="myPort-page__thum-item swiper-slide">
                   <img
@@ -222,6 +222,7 @@
     </div>
 
     <script>
+      AOS.init();
       const mySwiper = new Swiper(".swiper-container", {
         slidesPerView: "1",
         spaceBetween: 1,

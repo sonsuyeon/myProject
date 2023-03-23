@@ -1,3 +1,6 @@
+@import url("https://unpkg.com/aos@2.3.1/dist/aos.css?ver=191202");
+@import url("./../css/port.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css");
 * {
   margin: 0 auto;
   padding: 0;
@@ -137,6 +140,15 @@ section {
   top: 0;
   border-radius: 0;
   box-shadow: 1px 1px 5px #eeeeee;
+  animation: TopHeader 0.3s;
+}
+@keyframes TopHeader {
+  0% {
+    top: 5rem;
+  }
+  100% {
+    top: 0;
+  }
 }
 .header nav {
   margin-left: 0;

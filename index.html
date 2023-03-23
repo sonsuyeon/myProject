@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>suuyom's portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
     <div class="wrap">
-      <header class="header">
+      <header class="header" id="header">
         <h1 class="header__logo">
           <!-- <img class="header__profile" src="./assets/images/logo.png" alt="" /> -->
         </h1>
@@ -377,15 +378,14 @@
       </footer>
     </div>
 
-    <script>
+    <script type="module">
       let header = document.querySelector(".header");
-      let headerHeght = header.offsetHeight;
+      // let headerHeght = header.offsetHeight;
 
       window.onscroll = function () {
         let windowTop = window.scrollY;
         if (windowTop >= 300) {
           header.classList.add("topfixed");
-          console.log("11dd");
         } else {
           header.classList.remove("topfixed");
         }
