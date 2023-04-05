@@ -315,7 +315,7 @@
     padding-top: 16px;
   }
   .myPort__thum-img {
-    height: 350px;
+    height: auto;
   }
   .myPort__thum-img::after {
     display: none;
