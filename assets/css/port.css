@@ -315,7 +315,7 @@
     padding-top: 16px;
   }
   .myPort__thum-img {
-    height: auto;
+    height: 350px;
   }
   .myPort__thum-img::after {
     display: none;
@@ -403,4 +403,4 @@
     display: block;
     font-size: 20px;
   }
-} /*# sourceMappingURL=port.css.map */
+}/*# sourceMappingURL=port.css.map */
