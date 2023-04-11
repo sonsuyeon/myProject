@@ -45,8 +45,9 @@
   &__thum {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
-    padding-top: 39px;
+    height: 500px;
+    overflow-y: auto;
+    padding-top: 3vw;
     border-radius: 10px;
     border: 1px solid transparent;
     background-image: url(../images/scoll_Section.png);
@@ -56,6 +57,11 @@
     box-shadow: 3px 3px 15px rgb(170 170 170 / 20%);
     margin-bottom: 24px;
     box-sizing: border-box;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__thum-img {
     position: relative;
@@ -327,6 +333,7 @@
     }
     &__thum {
       padding-top: 16px;
+      height: 360px;
     }
     &__thum-img {
       height: auto;
