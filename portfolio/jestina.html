@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>suuyom's portfolio</title>
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script defer src="/assets/js/common.js"></script>
+    </head>
+    <body>
+        <main class="myPort" id="myPort">
+            <button class="myPort__ico-close" type="button" onclick="javascript:window.close()">
+                <img src="/assets/images/ico/close.png" alt="" />
+            </button>
+            <div class="myPort__inner">
+                <div class="myPort__heading">
+                    <span class="myPort__name-sub"> ADAPTIVE WEBSITE [PC, MOB]</span>
+                    <h2 class="myPort__name">제이에스티나</h2>
+                </div>
+                <div class="myPort__thum">
+                    <div class="myPort__thum-img">
+                        <img src="/assets/images/jestina/main.jpg" alt="제이에스티나 홈페이지 메인" />
+                    </div>
+                </div>
+                <section class="myPort__summary">
+                    <div class="myPort__more">
+                        <a class="myPort__more-link" href="https://www.berovel.com/"> 웹사이트 바로가기 </a>
+                    </div>
+                    <h3 class="myPort__tle">자사몰 운영개선 및 유지보수 퍼블리싱</h3>
+                    <p class="myPort__overView"></p>
+
+                    <div class="myPort-desc">
+                        <h4 class="myPort-desc__head">&lt; 제이에스티나 작업 &gt;</h4>
+                        <ul class="myPort-desc__list">
+                            <li class="myPort-desc__item">
+                                <span class="myPort-desc__tle">작업기간</span>
+                                <span class="myPort-desc__text"> 2023.04 ~ </span>
+                            </li>
+                            <li class="myPort-desc__item">
+                                <span class="myPort-desc__tle">기술스택</span>
+                                <span class="myPort-desc__text"> HTML5,CSS3,JavaScript,jQuery</span>
+                            </li>
+                            <li class="myPort-desc__item">
+                                <span class="myPort-desc__tle">협업툴</span>
+                                <span class="myPort-desc__text"> git</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script>
+            AOS.init();
+            const mySwiper = new Swiper(".swiper-container", {
+                slidesPerView: "1",
+                spaceBetween: 1,
+                loop: false,
+                // If we need pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + menu[index] + "</span>";
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
