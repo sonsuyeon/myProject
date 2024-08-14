@@ -1,6 +1,9 @@
 @import url("https://unpkg.com/aos@2.3.1/dist/aos.css?ver=191202");
 @import url("./../css/port.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css");
+html {
+    font-size: 62.5%;
+}
 * {
     margin: 0 auto;
     padding: 0;
@@ -17,7 +20,6 @@ body {
 li {
     list-style: none;
 }
-
 a {
     font-size: inherit;
     color: inherit;
@@ -643,10 +645,6 @@ img {
     }
 }
 @media only screen and (max-width: 768px) {
-    section {
-        width: 90%;
-        margin-bottom: 36px;
-    }
     .intro,
     .about,
     .myskill,
