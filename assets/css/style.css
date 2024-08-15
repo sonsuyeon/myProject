@@ -37,6 +37,21 @@ img {
     width: 100%;
 }
 
+/* common */
+.myportMain_sec{
+    display: block;
+    box-sizing: border-box;
+    max-width: 1200px;
+    width: 100%;
+    padding: 56px 24px 0;
+}
+.myportMain_sec-tle{
+    font-size: 36px;
+}
+.myportMain_sec-sub {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
 /* intro */
 .intro {
     position: relative;
@@ -77,7 +92,6 @@ img {
     height: 140px;
     background: #d9d9d9;
 }
-
 .intro__coding {
     position: relative;
     z-index: 11;
@@ -103,7 +117,7 @@ img {
     color: #99d6f5;
 }
 .intro__coding-indentifier {
-    color: #8aa9f9;
+    color: #2e68ff;
 }
 .intro__coding-keyword {
     color: #ffffff;
@@ -145,6 +159,7 @@ img {
 }
 .header nav {
     margin-left: 0;
+    text-transform: uppercase;
 }
 .header__logo {
     margin-right: 24px;
@@ -156,7 +171,12 @@ img {
     display: flex;
 }
 .header__item {
+    font-size: 16px;
     margin-right: 32px;
+}
+.header__name{
+    font-size: 14px;
+    color: #4b8752;
 }
 .header__link {
     display: inline-block;
@@ -175,7 +195,6 @@ img {
 .about {
     box-sizing: border-box;
     display: block;
-    padding-top: 56px;
 }
 .about__tle {
     font-size: 36px;
@@ -189,11 +208,9 @@ img {
 .about__wrap {
     display: flex;
 }
-
 .about-left {
     margin-right: 36px;
 }
-
 .about-profile {
     cursor: pointer;
     display: block;
@@ -208,7 +225,6 @@ img {
 .about-profile:hover {
     background-image: url(../images/avata2.png);
 }
-
 .about-keyword {
     margin: 12px 0 32px;
 }
@@ -229,7 +245,6 @@ img {
     display: inline-block;
     content: "#";
 }
-
 .about-more {
     margin-top: 36px;
     display: flex;
@@ -260,6 +275,7 @@ img {
     background-image: url(../images/about/download__off.png);
 }
 .about-more__desc {
+    font-size: 16px;
     word-break: keep-all;
 }
 
@@ -290,8 +306,6 @@ img {
 ========  myskill ========
 ========================*/
 .myskill {
-    box-sizing: border-box;
-    display: block;
     min-height: auto;
     padding-bottom: 80px;
 }
@@ -317,15 +331,16 @@ img {
 .myskill-top__item {
     width: calc(33.333% - 30px);
     width: 33.3333%;
+    font-size: 16px;
     margin: 0;
     box-sizing: border-box;
 }
 .myskill-top__name {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 .myskill-top__text {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 .myskill-top__text::before {
     content: "@";
@@ -340,6 +355,7 @@ img {
 }
 .myskill-bottom__item {
     width: auto;
+    font-size: 16px;
     margin-left: 0;
 }
 .myskill-bottom__name {
@@ -350,7 +366,6 @@ img {
 ========  myProject ========
 ========================*/
 .myProject {
-    display: block;
     min-height: auto;
 }
 .myProject__inner {
@@ -369,6 +384,7 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
+    font-size: 16px;
     color: #fff;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -393,21 +409,17 @@ img {
     width: 100%;
     height: 100%;
 }
-
 /*========================
 ========  mywork ========
 ========================*/
 .myWork {
-    box-sizing: border-box;
-    display: block;
-    padding-top: 56px;
 }
 .myWork__inner {
-    max-width: 1000px;
+    max-width: 1136px;
     margin: 0 auto;
 }
 .myWork__tle {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -587,9 +599,7 @@ img {
 ========  myStudy ========
 ========================*/
 .myStudy {
-    box-sizing: border-box;
-    display: block;
-    padding-top: 56px;
+    margin-bottom: 56px;
 }
 .myStudy__tle {
     font-size: 30px;
@@ -605,13 +615,13 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 24px auto 0;
 }
 .myStudy__item {
     width: calc(25% - 10px);
     margin: 0;
     border: 1px solid #ddd;
     padding: 10px;
+    font-size: 16px;
     text-align: center;
     word-break: keep-all;
 }
@@ -636,44 +646,41 @@ img {
 }
 
 @media only screen and (max-width: 1000px) {
-    .intro__inner,
-    .about__inner,
-    .myskill__inner,
-    .myWork__inner,
-    .myStudy__inner {
-        padding: 0 24px;
-    }
+
 }
 @media only screen and (max-width: 768px) {
-    .intro,
-    .about,
-    .myskill,
-    .myWork,
-    .myStudy {
-        padding-top: 24px;
+    .header {
+        width: 95%;
     }
-    .intro__tle,
-    .about__tle,
-    .myskill__tle,
-    .myWork__tle,
-    .myStudy__tle {
-        margin-bottom: 12px;
+    .header.topfixed{
+        width: 100%;
+    }
+    /* common */
+    .myportMain_sec{
+        max-width: 768px;
+        padding: 3.2rem 1.6rem 0;
+    }
+    .myportMain_sec-tle{
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+    }
+    .myportMain_sec-sub {
+        font-size: 1.4rem;
+        margin-bottom: 2.4rem;
     }
     .intro__top {
-        font-size: 28px;
+        font-size: 2.4rem;
     }
     .intro__coding {
-        font-size: 20px;
+        font-size: 2rem;
+        padding: 0 1.6rem;
     }
     .intro__coding-left {
-        margin-left: 50px;
+        margin-left: 3rem;
     }
     /*========================
   ========  about ========
   ========================*/
-    .about {
-        padding-top: 36px;
-    }
     .about__tle {
         font-size: 28px;
     }
@@ -736,9 +743,6 @@ img {
     .about-more {
         margin: 16px auto;
     }
-    .about-intro {
-        margin-bottom: 36px;
-    }
     .about-intro__desc-inner {
         font-size: 18px;
         margin-bottom: 12px;
@@ -746,18 +750,34 @@ img {
     /*========================
   ========  myskill ========
   ========================*/
-    .myskill {
-        padding-bottom: 0;
-    }
-    .myskill-top {
-        margin-bottom: 0;
+    .myportMain_sec-tle.myStudy__tle{
+        margin-bottom: 0.8rem;;
     }
     .myskill-top__list {
         flex-direction: column;
     }
     .myskill-top__item {
         width: 100%;
-        margin-bottom: 16px;
+        margin-bottom: 1.6rem;
+    }
+    .myskill-top__item:last-child{
+        margin-bottom: 0;
+    }
+    .myskill-top__name{
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    .myskill-top__text {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+    .myskill-bottom__name{
+        font-size: 1.4rem;
+    }
+    .myportMain_sec-tle.myskill__tle{
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
     }
     /*========================
   ========  mywork ========
@@ -779,39 +799,32 @@ img {
         margin-bottom: 24px;
     }
     /*========================
-  ========  myStudy ========
-  ========================*/
-    .myStudy__list {
-        flex-wrap: wrap;
-    }
-    .myStudy__item {
-        width: calc(50% - 10px);
-        margin-bottom: 5px;
-    }
-}
-@media only screen and (max-width: 500px) {
-    /*========================
-  ========  myProject ========
-  ========================*/
+    ========  myProject ========
+    ========================*/
     .myProject {
         display: block;
         min-height: auto;
     }
-    .myProject__inner {
-        padding: 0 12px;
-    }
     .myProject__item {
         width: 100%;
-        max-width: 500px;
+        max-width: 50rem;
+        margin-bottom: 1.6rem;
     }
     .myProject__thum {
         height: 300px;
     }
+    .myProject__item:last-child {
+        margin-bottom: 0;
+    }
     /*========================
   ========  myStudy ========
   ========================*/
-    .myStudy__item {
-        width: calc(100% - 10px);
-        margin-bottom: 0px;
+    .myStudy__list {
+        justify-content: center;
     }
-} /*# sourceMappingURL=style.css.map */
+    .myStudy__item {
+        width: 100%;
+        max-width: 500px;
+        font-size: 1.4rem;
+    }
+}

@@ -3,9 +3,12 @@
 ========  mywork ========
 ========================*/
 .myPort {
-    box-sizing: border-box;
+    position: relative;
     display: block;
+    max-width: 1136px;
     padding-top: 56px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 .myPort__inner {
     max-width: 1136px;
@@ -13,6 +16,7 @@
     padding: 0 32px;
 }
 .myPort__ico-close {
+    max-width: 1136px;
     position: fixed;
     cursor: pointer;
     width: 32px;
@@ -115,6 +119,8 @@
     margin-bottom: 32px;
 }
 .myPort__more-link {
+    display: inline-block;
+    height: 100%;
     cursor: pointer;
     font-size: 14px;
     padding: 8px 16px;
@@ -196,6 +202,7 @@
 }
 .myPort-site__item {
     height: 100%;
+    margin: 0;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
@@ -248,11 +255,14 @@
     padding: 0;
     flex-direction: row-reverse;
 }
+.myPort-content__inner.myPort-content__second .myPort-content__thum {
+    margin-right: 0;
+}
 .myPort-content__inner.myPort-content__second .myPort-content__txt {
     margin-right: 16px;
 }
 .myPort-content__thum {
-    max-width: 650px;
+    max-width: 60%;
     width: 100%;
     margin: 0 16px 0 0;
     border-radius: 10px;
@@ -352,6 +362,19 @@
     .myPort__thum-img::after {
         display: none;
     }
+    .myPort__thum-doguri {
+        max-width: 34rem;
+        width: 75%;
+        height: 48rem;
+    }
+    .myPort__thum-doguri  .myPort__thum-img{
+        width: 100%;
+        height: auto;
+    }
+    .myPort__thum-doguri .myPort__thum-img img{
+        width: 100%;     
+    }
+
     .myPort__summary {
         margin-bottom: 3.4rem;
     }
@@ -413,6 +436,7 @@
     .myPort-site__item {
         height: 100%;
         max-width: 98%;
+        margin: 0;
         border: 1px solid #ddd;
         border-radius: 5px;
         box-sizing: border-box;
@@ -423,7 +447,6 @@
     }
     .myPort-site__item.myPort-site__m {
         width: 29%;
-        margin: 0;
     }
     .myPort-site__item img {
         width: 100%;
@@ -437,6 +460,7 @@
         flex-wrap: wrap;
         margin-bottom: 20px;
         align-items: center;
+        
     }
     .myPort-section__item:nth-child(2n) {
         flex-direction: row-reverse;
@@ -472,7 +496,8 @@
         margin: 0 auto 1.6rem;
     }
     .myPort-content__thum.swiper-container {
-        margin: 0 32px 0 0;
+        max-width: 52.5rem;
+        margin: 0 0 1.6rem;
     }
     .myPort-content__thum-list {
         display: flex;
@@ -484,7 +509,7 @@
     .myPort-content__thum-img {
         max-width: 700px;
         width: 100%;
-        margin: 0 32px 0 0;
+        margin: 0 0 0 0;
         border-radius: 10px;
         border: 1px solid #ddd;
     }

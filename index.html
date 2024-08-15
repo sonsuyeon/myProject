@@ -9,10 +9,10 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </head>
     <body>
-        <div class="wrap">
+        <main class="wrap">
             <header class="header" id="header">
                 <h1 class="header__logo">
-                    <!-- <img class="header__profile" src="/assets/images/logo.png" alt="" /> -->
+                    <img class="header__profile" src="/assets/images/logo.png" alt="" />
                 </h1>
                 <nav>
                     <ul class="header__list">
@@ -31,7 +31,7 @@
                     <span class="header__name">son suyeon</span>
                 </p>
             </header>
-            <section id="intro" class="intro">
+            <section class="intro" id="intro">
                 <div class="intro__inner">
                     <div class="intro__top">
                         안녕하세요.<br />
@@ -75,9 +75,9 @@
                     </div>
                 </div>
             </section>
-            <section class="about" id="aboutMe">
-                <div class="about__inner">
-                    <h2 class="about__tle">About Me</h2>
+            <section class="myportMain_sec about" id="aboutMe">
+                <div class="myportMain_sec-inner about__inner">
+                    <h2 class="myportMain_sec-tle about__tle">About Me</h2>
                     <div class="about__wrap">
                         <div class="about-left">
                             <div class="about-profile"></div>
@@ -127,10 +127,10 @@
                     </div>
                 </div>
             </section>
-            <section class="myskill">
-                <div class="myskill__inner">
-                    <div class="myskill-top">
-                        <h2 class="myskill__tle">What I can do</h2>
+            <section class="myportMain_sec myskill">
+                <div class="myportMain_sec-inner myskill__inner">
+                    <article class="myskill-top">
+                        <h2 class="myportMain_sec-tle myskill__tle">What I can do</h2>
                         <ul class="myskill-top__list">
                             <li class="myskill-top__item">
                                 <h3 class="myskill-top__name">HTML</h3>
@@ -158,12 +158,12 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
-                    <div class="myskill-bottom">
-                        <h2 class="myskill__tle myskill__tle-more">more .. than</h2>
+                    </article>
+                    <article class="myskill-bottom">
+                        <h2 class="myportMain_sec-tle myskill__tle myskill__tle-more">more .. than</h2>
                         <ul class="myskill-bottom__list">
                             <li class="myskill-bottom__item">
-                                <h3 class="myskill-bottom__name">Photosho + Illustrator</h3>
+                                <h3 class="myskill-bottom__name">Photoshop + Illustrator</h3>
                             </li>
                             <li class="myskill-bottom__item">
                                 <h3 class="myskill-bottom__name">Figma</h3>
@@ -178,12 +178,12 @@
                                 <h3 class="myskill-bottom__name">Co-work</h3>
                             </li>
                         </ul>
-                    </div>
+                    </article>
                 </div>
             </section>
-            <section class="myProject" id="myProject">
-                <div class="myProject__inner">
-                    <h2 class="myWork__tle">My work</h2>
+            <section class="myportMain_sec myProject" id="myProject">
+                <div class="myportMain_sec-inner myProject__inner">
+                    <h2 class="myportMain_sec-tle myWork__tle">My work</h2>
                     <ul class="myProject__list">
                         <li class="myProject__item">
                             <a class="myProject__link" target="_blank" href="/portfolio/berovel.html">
@@ -248,10 +248,10 @@
                     </ul>
                 </div>
             </section>
-            <section class="myStudy">
-                <div class="myStudy__inner">
-                    <h2 class="myStudy__tle">my Study</h2>
-                    <p>제가 공부하고 있는 것들을 기록하고 있어요</p>
+            <section class="myportMain_sec myStudy">
+                <div class="myportMain_sec-inner myStudy__inner">
+                    <h2 class="myportMain_sec-tle myStudy__tle">my Study</h2>
+                    <p class="myportMain_sec-sub">제가 공부하고 있는 것들을 기록하고 있어요</p>
                     <ul class="myStudy__list">
                         <li class="myStudy__item myStudy__html">
                             <a href="https://ebony-battery-335.notion.site/html-5f65da95f18e4f59807c761521bf5749">HTML정리</a>
@@ -280,7 +280,7 @@
                     <p class="footer__desc-copy">© 2024. SonSuYeon All Rights reserved.</p>
                 </div>
             </footer>
-        </div>
+        </main>
 
         <script type="module">
             let header = document.querySelector(".header");
