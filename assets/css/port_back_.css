@@ -239,7 +239,7 @@
     padding: 0;
     flex-direction: row-reverse;
 }
-.myPort-content__inner.myPort-content__second .myPort-content__txt {
+.myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
     margin-right: 32px;
 }
 .myPort-content__thum {
@@ -276,7 +276,7 @@
 .myPort-content__item {
     margin-bottom: 24px;
 }
-.myPort-content__txt {
+.myPort-content__txt-wrap {
     margin: 0;
 }
 .myPort-content__text {
@@ -297,14 +297,14 @@
     .myPort-content__inner.myPort-content__second {
         flex-direction: column;
     }
-    .myPort-content__inner.myPort-content__second .myPort-content__txt {
+    .myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
         margin-right: 32px;
         margin-left: 24px;
     }
     .myPort-content__thum {
         margin: 0 auto 16px;
     }
-    .myPort-content__txt {
+    .myPort-content__txt-wrap {
         width: 100%;
     }
     .myPort-desc__item {
@@ -527,7 +527,7 @@
         padding: 0;
         flex-direction: row-reverse;
     }
-    .myPort-content__inner.myPort-content__second .myPort-content__txt {
+    .myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
         margin-right: 32px;
     }
     .myPort-content__thum {
@@ -564,7 +564,7 @@
     .myPort-content__item {
         margin-bottom: 24px;
     }
-    .myPort-content__txt {
+    .myPort-content__txt-wrap {
         margin: 0;
     }
     .myPort-content__text {

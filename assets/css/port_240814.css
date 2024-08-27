@@ -247,7 +247,7 @@
     padding: 0;
     flex-direction: row-reverse;
 }
-.myPort-content__inner.myPort-content__second .myPort-content__txt {
+.myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
     margin-right: 32px;
 }
 .myPort-content__thum {
@@ -284,7 +284,7 @@
 .myPort-content__item {
     margin-bottom: 24px;
 }
-.myPort-content__txt {
+.myPort-content__txt-wrap {
     margin: 0;
 }
 .myPort-content__text {
@@ -510,7 +510,7 @@
         padding: 0;
         flex-direction: row-reverse;
     }
-    .myPort-content__inner.myPort-content__second .myPort-content__txt {
+    .myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
         margin-right: 32px;
     }
     .myPort-content__thum {
@@ -547,7 +547,7 @@
     .myPort-content__item {
         margin-bottom: 24px;
     }
-    .myPort-content__txt {
+    .myPort-content__txt-wrap {
         margin: 0;
     }
     .myPort-content__text {
