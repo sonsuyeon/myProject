@@ -21,23 +21,25 @@
                 <section class="myPort-detail__chapters myPort-detail__point">
                     <h3 class="myPort-detail__chapters-tle">PROJECT KEY POINT</h3>
                     <ul class="myPort-detail__point-list">
-                        <li class="myPort-detail__point-item">1. 컴포넌트 활용</li>
+                        <li class="myPort-detail__point-item">1. 시멘틱 마크업 활용</li>
                         <li class="myPort-detail__point-item">2. BEM 방법론 활용하여 SCSS 도입</li>
                     </ul>
                 </section>
 
                 <section class="myPort-detail__chapters">
                     <section class="myPort-detail__sec">
-                        <h3 class="myPort-detail__chapters-tle">1. 컴포넌트 활용</h3>
+                        <h3 class="myPort-detail__chapters-tle">1. 시멘틱 마크업 활용</h3>
                         <h4 class="myPort-detail__chapters-tle-sub">&lt; 컴포넌트를 사용하는 이유 &gt;</h4>
                         <ul class="myPort-detail__desc-list">
-                            <li class="myPort-detail__desc-item">- 코드의 재사용성을 위해</li>
-                            <li class="myPort-detail__desc-item">- 코드의 복잡성 줄이기위해</li>
+                            <li class="myPort-detail__desc-item">- 검색엔진 최적화</li>
+                            <li class="myPort-detail__desc-item">- 접근성</li>
+                            <li class="myPort-detail__desc-item">- 가독성</li>
                         </ul>
                     </section>
 
                     <section class="myPort-detail__sec">
-                        <h4 class="myPort-detail__sec-tle">1.1 공통컴포넌트 사용 : 코드 재사용</h4>
+                        <h4 class="myPort-detail__sec-tle">1.1 콘텐츠에 의미 정의 및 목적부여</h4>
+                        <h4 class="myPort-detail__chapters-tle-sub">&lt; 컴포넌트를 사용하는 이유 &gt;</h4>
                         <figure class="myPort-detail__sec-photo">
                             <img src="../assets/images/berovel/detail/myPort-detail__chpter1-thum1.png" alt="" />
                         </figure>
@@ -48,7 +50,34 @@
                         <p class="myPort-detail__sec-desc">- CategoryList.vue 라는 구조를 동일하게 사용하여 중복코드 사용을 줄였습니다.</p>
                     </section>
                     <section class="myPort-detail__sec">
-                        <h4 class="myPort-detail__sec-tle">1.2 페이지 → 컴포넌트 단위로 분할 사용 : 코드의 복잡성 감소</h4>
+                        <h4 class="myPort-detail__sec-tle">`&lt;section&gt;` `&lt;article&gt;`의 차이점 및 div 사용 지양이 의미하는 바</h4>
+                        <div class="myPort-detail__sec-text">
+                            <p>시멘틱마크업을 하면서 제일 고민한 부분이 section태그를 쓸 것인지, article 태그를 쓸 것인지에 대한 것이었습니다.</p>
+                            <dl class="myPort-detail__desc-list">
+                                <dt>1. 의미와 목적</dt>
+                                <dd>
+                                    <p>`&lt;section&gt;` : 주제별로 콘텐츠를 구분하고 페이지를 구조화하는 데 사용됨.</p>
+                                    <p>`&lt;article&gt;` : 독립적이고 자체적으로 의미를 가지는 콘텐츠를 나타냄. 문서나 페이지의 다른 부분과 관계없이도 충분히 이해될 수 있어야 함.</p>
+                                </dd>
+                                <dt>2. 재사용 가능성</dt>
+                                <dd>
+                                    <p>`&lt;section&gt;` : 문서의 한 부분으로서, 그 자체로 완전한 의미를 가지지 않습니다. 문맥이 필요하며, 다른 섹션들과 결합해 더 큰 의미를 형성합니다.</p>
+                                    <p>`&lt;article&gt;` : 독립적으로 재사용이 가능하며, 다른 문서나 페이지로 이동하더라도 그 의미가 변하지 않습니다.</p>
+                                </dd>
+                                <dt>3. 내부 구조</dt>
+                                <dd>
+                                    <p>
+                                        `&lt;section&gt;` : 보통 다른 요소들(예: `&lt;header&gt;`, `&lt;h2&gt;`, `&lt;p&gt;`, `&lt;article&gt;`)을 포함할 수 있으며, 특정 주제에 대한 설명이나 정보를
+                                        제공합니다.
+                                    </p>
+                                    <p>`&lt;article&gt;` : 자체적으로 완전한 콘텐츠이며, 제목과 본문을 포함하는 것이 일반적입니다.</p>
+                                </dd>
+                            </dl>
+                            <div class="myPort-detail__sec-text">
+                                두 태그의 차이점을 찾아보고 예시를 계속 고민하였고, 정답은 계속해서 사용해보는 것 밖에 없다고 생각하여 매 이벤트, 기획전을 작업할 때 기획서와 디자인 요소 확인 후 시멘틱
+                                태그를 먼저 고려하여 작업하였습니다.
+                            </div>
+                        </div>
                         <div class="myPort-detail__sec-photo-wrap">
                             <figure class="myPort-detail__sec-code">
                                 <img src="../assets/images/berovel/detail/myPort-detail__chpter1-code2.png" alt="" />
@@ -56,14 +85,6 @@
                             <figure class="myPort-detail__sec-photo">
                                 <img src="../assets/images/berovel/detail/myPort-detail__chpter1-thum2.png" alt="" />
                             </figure>
-                        </div>
-                        <div class="myPort-detail__sec-text">
-                            <p>여러개의 컴포넌트를 페이지, 더 컴포넌트 단위로 결합시켜 유지보수 및 작업시에 접근하기 쉽도록 하였습니다.</p>
-                            <p>하나의 컴포넌트에 여러 책임을 가중시키는 것을 방지하고자 컴포넌트 안에서도 컴포넌트 단위로 나누어 독립적인 컴포넌트로 작성했습니다.</p>
-                            <p>
-                                위의 코드와 이미지는 메인페이지를 컴포넌트로 분리하여 작성한 것인데, 이미지에서 MainBannerNew 등 빨간색으로 작성된 컴포넌트는 독립적으로 사용할 수 있도록 컴포넌트로
-                                만들었으며, 파란색으로 작성된 MainListItemDrag 컴포넌트는 신작/ PD추천작/ 유료전환작 등의 동일한 구조와 스타일의 컴포넌트를 재사용하여 작성했습니다.
-                            </p>
                         </div>
                     </section>
                 </section>
