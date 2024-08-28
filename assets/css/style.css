@@ -2,10 +2,10 @@
 @import url("./../css/port.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css");
 html {
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
 }
 * {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -38,14 +38,15 @@ img {
 }
 
 /* common */
-.myportMain_sec{
+.myportMain_sec {
     display: block;
     box-sizing: border-box;
     max-width: 1200px;
     width: 100%;
-    padding: 56px 24px 0;
+    padding: 0 24px;
+    margin-bottom: 56px;
 }
-.myportMain_sec-tle{
+.myportMain_sec-tle {
     font-size: 36px;
 }
 .myportMain_sec-sub {
@@ -174,7 +175,7 @@ img {
     font-size: 16px;
     margin-right: 32px;
 }
-.header__name{
+.header__name {
     font-size: 14px;
     color: #4b8752;
 }
@@ -195,6 +196,7 @@ img {
 .about {
     box-sizing: border-box;
     display: block;
+    padding-top: 56px;
 }
 .about__tle {
     font-size: 36px;
@@ -307,7 +309,6 @@ img {
 ========================*/
 .myskill {
     min-height: auto;
-    padding-bottom: 80px;
 }
 .myskill__inner {
     max-width: 1000px;
@@ -390,11 +391,11 @@ img {
     text-align: center;
     align-items: center;
     transition: all 0.3s;
+    padding: 20px;
 }
 .myProject__item {
     position: relative;
     width: 50%;
-    max-width: 350px;
     box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
     margin-bottom: 24px;
 }
@@ -646,27 +647,33 @@ img {
 }
 
 @media only screen and (max-width: 1000px) {
-
 }
 @media only screen and (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
     .header {
         width: 95%;
     }
-    .header.topfixed{
+    .header.topfixed {
         width: 100%;
     }
     /* common */
-    .myportMain_sec{
+    .myportMain_sec {
         max-width: 768px;
         padding: 3.2rem 1.6rem 0;
     }
-    .myportMain_sec-tle{
+    .myportMain_sec-tle {
         font-size: 2.4rem;
         margin-bottom: 1.2rem;
     }
     .myportMain_sec-sub {
         font-size: 1.4rem;
         margin-bottom: 2.4rem;
+    }
+    .intro {
+        align-items: flex-start;
+        padding-top: 10rem;
     }
     .intro__top {
         font-size: 2.4rem;
@@ -719,8 +726,8 @@ img {
         display: none;
     }
     .about-intro__top {
-        font-size: 22px;
-        margin-bottom: 24px;
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
     }
     .about-intro__name {
         font-size: 20px;
@@ -728,9 +735,7 @@ img {
     .about-intro__desc {
         padding-right: 0;
     }
-    .about-intro__desc-inner {
-        font-size: 16px;
-    }
+
     /*========================
   ========  about ========
   ========================*/
@@ -744,14 +749,14 @@ img {
         margin: 16px auto;
     }
     .about-intro__desc-inner {
-        font-size: 18px;
-        margin-bottom: 12px;
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
     }
     /*========================
   ========  myskill ========
   ========================*/
-    .myportMain_sec-tle.myStudy__tle{
-        margin-bottom: 0.8rem;;
+    .myportMain_sec-tle.myStudy__tle {
+        margin-bottom: 0.8rem;
     }
     .myskill-top__list {
         flex-direction: column;
@@ -760,10 +765,10 @@ img {
         width: 100%;
         margin-bottom: 1.6rem;
     }
-    .myskill-top__item:last-child{
+    .myskill-top__item:last-child {
         margin-bottom: 0;
     }
-    .myskill-top__name{
+    .myskill-top__name {
         font-size: 1.6rem;
         margin-bottom: 0.8rem;
     }
@@ -771,10 +776,10 @@ img {
         font-size: 1.4rem;
         margin-bottom: 0.4rem;
     }
-    .myskill-bottom__name{
+    .myskill-bottom__name {
         font-size: 1.4rem;
     }
-    .myportMain_sec-tle.myskill__tle{
+    .myportMain_sec-tle.myskill__tle {
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
@@ -815,6 +820,9 @@ img {
     }
     .myProject__item:last-child {
         margin-bottom: 0;
+    }
+    .myProject__hover {
+        padding: 2rem;
     }
     /*========================
   ========  myStudy ========
