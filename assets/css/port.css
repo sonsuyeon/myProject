@@ -746,10 +746,7 @@
         flex-wrap: wrap;
         width: 100%;
     }
-    .myPort-detail__sec-photo {
-        max-width: 60%;
-        width: 100%;
-    }
+    .myPort-detail__sec-photo,
     .myPort-detail__sec-code {
         max-width: 100%;
         width: 100%;
