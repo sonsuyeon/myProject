@@ -10,343 +10,127 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script defer src="/assets/js/common.js"></script>
     </head>
-    <style>
-        /*========================
-        ========  mywork ========
-        ========================*/
-        .myPort {
-            position: relative;
-            display: block;
-            max-width: 1136px;
-            padding-top: 56px;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
-        .myPort-detail__inner {
-            max-width: 1136px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .myPort-detail__ico-close {
-            max-width: 1136px;
-            position: fixed;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            right: 24px;
-            top: 24px;
-        }
-        .myPort-detail__ico-close img {
-            width: 100%;
-        }
-        .myPort-detail__name {
-            font-size: 40px;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-        .myPort-detail__name-sub {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 4px;
-            text-align: center;
-        }
-        .myPort-detail__head {
-            color: #292929;
-            font-size: 44px;
-            text-transform: capitalize;
-            text-align: center;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-        .myPort-detail__thum {
-            width: 100%;
-            max-width: 1200px;
-            height: 500px;
-            overflow-y: auto;
-            padding-top: 3vw;
-            border-radius: 10px;
-            border: 1px solid transparent;
-            background-image: url(../images/scoll_Section.png);
-            background-position: top;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
-            margin-bottom: 32px;
-            box-sizing: border-box;
-            -ms-overflow-style: none; /* 인터넷 익스플로러 */
-            scrollbar-width: none; /* 파이어폭스 */
-        }
-        .myPort-detail__thum::-webkit-scrollbar {
-            display: none;
-        }
-        .myPort-detail__thum-img {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            overflow-y: auto;
-            border: transparent;
-            cursor: grab;
-            box-sizing: border-box;
-        }
-        .myPort-detail__thum-img::-webkit-scrollbar {
-            display: none;
-        }
-        .myPort-detail__thum-img::after {
-            display: block;
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(../images/ico/scroll.png);
-            background-color: rgba(135, 135, 135, 0.2);
-            background-size: 40px 40px;
-            background-repeat: no-repeat;
-            background-position: center 50%;
-            z-index: 10;
-        }
-        .myPort-detail__thum-img:hover::after {
-            display: none;
-        }
-        .myPort-detail__thum-img img {
-            width: 100%;
-        }
-        .myPort-detail__thum-doguri {
-            max-width: 320px;
-            padding-top: 0;
-            background: none;
-            box-sizing: border-box;
-        }
-        .myPort-detail__thum-doguri__thum-img {
-            width: 100%;
-            height: 500px;
-        }
-        .myPort-detail__summary {
-            flex-wrap: wrap;
-            width: 100%;
-            margin-bottom: 56px;
-        }
-        .myPort-detail__more {
-            margin-bottom: 32px;
-        }
-        .myPort-detail__more-link {
-            display: inline-block;
-            height: 100%;
-            cursor: pointer;
-            font-size: 14px;
-            padding: 8px 16px;
-            color: #fff;
-            background: rgb(31, 97, 132);
-            border-radius: 10px;
-            margin-right: 5px;
-            box-shadow: 3px 3px 7px rgba(31, 97, 132, 0.4);
-        }
-        .myPort-detail__more-txt {
-            font-size: 14px;
-            margin-top: 16px;
-        }
-        .myPort-detail__overView-text {
-            font-size: 16px;
-            margin-bottom: 24px;
-            word-break: keep-all;
-        }
-        .myPort-detail__overView-tle {
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 24px;
-            text-transform: capitalize;
-            color: #292929;
-        }
-        .myPort-detail__overView-tle-sub {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #292929;
-        }
-        .myPort-detail__overView-list {
-            margin-bottom: 24px;
-        }
-        .myPort-detail__overView-item {
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-        .myPort-detail__overView-item::before {
-            content: "-";
-            display: inline-block;
-            margin-right: 8px;
-        }
-        .myPort-desc {
-            margin-bottom: 24px;
-        }
-        .myPort-desc__item {
-            display: inline-block;
-            font-size: 14px;
-            margin-right: 20px;
-        }
-        .myPort-desc__head {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-        .myPort-desc__tle {
-            font-weight: bold;
-            margin-right: 2px;
-        }
-        .myPort-desc__span {
-            display: block;
-        }
-        .myPort-desc__span::before {
-            content: "-";
-            margin-right: 5px;
-        }
-        .myPort-desc__comment::before {
-            content: "*";
-            vertical-align: sub;
-            margin-right: 5px;
-        }
-        .myPort-site {
-            margin-bottom: 56px;
-        }
-        .myPort-site__list {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-        .myPort-site__item {
-            height: 100%;
-            margin: 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-        .myPort-site__item.myPort-site__pc {
-            width: calc(70% - 12px);
-        }
-        .myPort-site__item.myPort-site__m {
-            width: calc(30% - 12px);
-            margin: 0;
-        }
-        .myPort-site__item img {
-            width: 100%;
-        }
-
-        .myPort-section__inner {
-            width: 100%;
-        }
-        .myPort-section__item {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-        .myPort-section__item:nth-child(2n) {
-            flex-direction: row-reverse;
-            text-align: right;
-        }
-        .myPort-section__item .myPort-section__desc {
-            padding-right: 24px;
-        }
-        .myPort-section__thum {
-            width: 50%;
-            border-radius: 10px;
-        }
-        .myPort-section__desc {
-            color: #292929;
-            width: 50%;
-            padding-left: 24px;
-        }
-        .myPort-content__inner {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            max-width: 1136px;
-            margin-bottom: 56px;
-        }
-        .myPort-content__inner.myPort-content__second {
-            padding: 0;
-            flex-direction: row-reverse;
-        }
-        .myPort-content__inner.myPort-content__second .myPort-content__thum {
-            margin-right: 0;
-        }
-        .myPort-content__inner.myPort-content__second .myPort-content__txt-wrap {
-            margin-right: 16px;
-        }
-        .myPort-content__thum {
-            max-width: 60%;
-            width: 100%;
-            margin: 0 16px 0 0;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-        }
-        .myPort-content__thum.swiper-container {
-            margin: 0 32px 0 0;
-        }
-        .myPort-content__thum-list {
-            display: flex;
-        }
-        .myPort-content__thum-item {
-            max-width: 700px;
-            width: 100%;
-        }
-        .myPort-content__thum-img {
-            max-width: 700px;
-            width: 100%;
-            margin: 0 32px 0 0;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-        }
-        .myPort-content__thum-m {
-            max-width: 500px;
-        }
-        .myPort-content__tle {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-        .myPort-content__item {
-            margin-bottom: 24px;
-        }
-        .myPort-content__item:last-child {
-            margin-bottom: 0px;
-        }
-        .myPort-content__txt-wrap {
-            margin: 0;
-        }
-        .myPort-content__text {
-            font-size: 16px;
-            margin: 0;
-        }
-        .myPort-content__skill {
-            display: block;
-            font-size: 20px;
-            font-weight: bold;
-            text-transform: capitalize;
-            margin-bottom: 8px;
-            color: #a37a7a;
-        }
-    </style>
+    <style></style>
     <body>
         <main class="myPort-detail" id="myPortDetail">
             <h2 class="myPort-detail__name">비로벨</h2>
-            <button class="myPort-detail__ico-close" type="button" onclick="javascript:window.close()">
-                <img src="/assets/images/ico/close.png" alt="닫기 버튼" />
-            </button>
-            <div class="myPort-detail__inner">
-                <section class="myPort-detail__sec-wrap myPort-detail__point">
-                    <h3>PROJECT KEY POINT</h3>
+            <a class="myPort-detail__link" href="../index.html">
+                <img src="/assets/images/ico/home.png" alt="홈 버튼" />
+            </a>
+            <section class="myPort-detail__inner">
+                <section class="myPort-detail__chapters myPort-detail__point">
+                    <h3 class="myPort-detail__chapters-tle">PROJECT KEY POINT</h3>
                     <ul class="myPort-detail__point-list">
-                        <li class="myPort-detail__point-item">1. 컴포넌트 활용</li>
+                        <li class="myPort-detail__point-item">1. 시멘틱 마크업 활용</li>
                         <li class="myPort-detail__point-item">2. BEM 방법론 활용하여 SCSS 도입</li>
                     </ul>
                 </section>
-                <section class="myPort-detail__thum">
+
+                <section class="myPort-detail__chapters">
+                    <section class="myPort-detail__sec">
+                        <h3 class="myPort-detail__chapters-tle">1. 시멘틱 마크업 활용</h3>
+                        <h4 class="myPort-detail__chapters-tle-sub">&lt; 컴포넌트를 사용하는 이유 &gt;</h4>
+                        <ul class="myPort-detail__desc-list">
+                            <li class="myPort-detail__desc-item">- 검색엔진 최적화</li>
+                            <li class="myPort-detail__desc-item">- 접근성</li>
+                            <li class="myPort-detail__desc-item">- 가독성</li>
+                        </ul>
+                    </section>
+
+                    <section class="myPort-detail__sec">
+                        <h4 class="myPort-detail__sec-tle">1.1 콘텐츠에 의미 정의 및 목적부여</h4>
+                        <h4 class="myPort-detail__chapters-tle-sub">&lt; 컴포넌트를 사용하는 이유 &gt;</h4>
+                        <figure class="myPort-detail__sec-photo">
+                            <img src="../assets/images/berovel/detail/myPort-detail__chpter1-thum1.png" alt="" />
+                        </figure>
+                        <div class="myPort-detail__sec-desc">
+                            - 상단 카테고리 영역 오신작(최신등록작품)/로맨스/판타지/BL 클릭할 때, <br />
+                            categoryChange 함수를 실행시켜 아래 작품리스트가 일치하는 카테고리 리스트를 불러옵니다.
+                        </div>
+                        <p class="myPort-detail__sec-desc">- CategoryList.vue 라는 구조를 동일하게 사용하여 중복코드 사용을 줄였습니다.</p>
+                    </section>
+                    <section class="myPort-detail__sec">
+                        <h4 class="myPort-detail__sec-tle">`&lt;section&gt;` `&lt;article&gt;`의 차이점 및 div 사용 지양이 의미하는 바</h4>
+                        <div class="myPort-detail__sec-text">
+                            <p>시멘틱마크업을 하면서 제일 고민한 부분이 section태그를 쓸 것인지, article 태그를 쓸 것인지에 대한 것이었습니다.</p>
+                            <dl class="myPort-detail__desc-list">
+                                <dt>1. 의미와 목적</dt>
+                                <dd>
+                                    <p>`&lt;section&gt;` : 주제별로 콘텐츠를 구분하고 페이지를 구조화하는 데 사용됨.</p>
+                                    <p>`&lt;article&gt;` : 독립적이고 자체적으로 의미를 가지는 콘텐츠를 나타냄. 문서나 페이지의 다른 부분과 관계없이도 충분히 이해될 수 있어야 함.</p>
+                                </dd>
+                                <dt>2. 재사용 가능성</dt>
+                                <dd>
+                                    <p>`&lt;section&gt;` : 문서의 한 부분으로서, 그 자체로 완전한 의미를 가지지 않습니다. 문맥이 필요하며, 다른 섹션들과 결합해 더 큰 의미를 형성합니다.</p>
+                                    <p>`&lt;article&gt;` : 독립적으로 재사용이 가능하며, 다른 문서나 페이지로 이동하더라도 그 의미가 변하지 않습니다.</p>
+                                </dd>
+                                <dt>3. 내부 구조</dt>
+                                <dd>
+                                    <p>
+                                        `&lt;section&gt;` : 보통 다른 요소들(예: `&lt;header&gt;`, `&lt;h2&gt;`, `&lt;p&gt;`, `&lt;article&gt;`)을 포함할 수 있으며, 특정 주제에 대한 설명이나 정보를
+                                        제공합니다.
+                                    </p>
+                                    <p>`&lt;article&gt;` : 자체적으로 완전한 콘텐츠이며, 제목과 본문을 포함하는 것이 일반적입니다.</p>
+                                </dd>
+                            </dl>
+                            <div class="myPort-detail__sec-text">
+                                두 태그의 차이점을 찾아보고 예시를 계속 고민하였고, 정답은 계속해서 사용해보는 것 밖에 없다고 생각하여 매 이벤트, 기획전을 작업할 때 기획서와 디자인 요소 확인 후 시멘틱
+                                태그를 먼저 고려하여 작업하였습니다.
+                            </div>
+                        </div>
+                        <div class="myPort-detail__sec-photo-wrap">
+                            <figure class="myPort-detail__sec-code">
+                                <img src="../assets/images/berovel/detail/myPort-detail__chpter1-code2.png" alt="" />
+                            </figure>
+                            <figure class="myPort-detail__sec-photo">
+                                <img src="../assets/images/berovel/detail/myPort-detail__chpter1-thum2.png" alt="" />
+                            </figure>
+                        </div>
+                    </section>
+                </section>
+                <section class="myPort-detail__chapters">
+                    <h3 class="myPort-detail__chapters-tle">2. SCSS 도입</h3>
+                    <section class="myPort-detail__sec">
+                        <h4 class="myPort-detail__sec-tle">2.1 BEM 방법론 적용</h4>
+                        <ul class="myPort-detail__desc-list">
+                            <li class="myPort-detail__desc-item">BEM 방법을 통해 작성자가 아닌 다른 작업자가 코드를 보아도 목적과 기능을 직관적으로 파악 가능</li>
+                            <li class="myPort-detail__desc-item">CSS만으로 구조 파악 가능</li>
+                            <li class="myPort-detail__desc-item">높은 재사용성</li>
+                        </ul>
+                        <figure class="myPort-detail__sec-code">
+                            <img src="../assets/images/berovel/detail/myPort-detail__chpter2-code1.png" alt="" />
+                        </figure>
+                        <div class="myPort-detail__sec-text">
+                            <p>
+                                코멘트 영역에 .wrk-comment__list / .wrk-comment__item / wrk-comment__btn--more 등의 클래스로 작성하였으며, <br />wrk-comment__item--none에서 wrk-comment는 Block,item는
+                                Element, none은 modifier가 됩니다.
+                            </p>
+                            <p>wrk-comment는 작품의 댓글을 의미하며, item요소가 none(없는) 상태를 나타내는 작품댓글이 없음을 의미합니다.</p>
+                        </div>
+                        <figure class="myPort-detail__sec-code">
+                            <img src="../assets/images/berovel/detail/myPort-detail__chpter2-code2.png" alt="" />
+                        </figure>
+                        <p class="myPort-detail__sec-desc">CategoryList.vue 라는 구조를 동일하게 사용하여 중복코드 사용을 줄였습니다.</p>
+                    </section>
+                    <section class="myPort-detail__sec">
+                        <h4 class="myPort-detail__sec-tle">2.2 SCSS 기법 활용</h4>
+
+                        <figure class="myPort-detail__sec-code">
+                            <img src="../assets/images/berovel/detail/myPort-detail__chpter2-code3.png" alt="" />
+                        </figure>
+                        <p class="myPort-detail__sec-text">
+                            글자수가 넘치게 되어 말줄임표가 필요한 경우 <br />
+                            @mixin - @include 기법을 활용해 중복되는 코드를 쉽게 불러오며, 수정이 있을 경우 한 번에 변경할 수 있도록 했습니다. <br />
+                            별도로 css를 수정해주어야 할 때는 @include 아래 -webkit-line-clamp: 2; 작성해준 것처럼 추가했습니다.
+                        </p>
+                    </section>
+                </section>
+                <!--   <section class="myPort-detail__thum">
                     <div class="myPort-detail__thum-img">
                         <img src="/assets/images/berovel/main_pc.png" alt="비로벨 메인 썸네일" />
                     </div>
-                </section>
-                <section class="myPort-detail__summary"></section>
-            </div>
+                </section> -->
+            </section>
         </main>
 
         <script>
