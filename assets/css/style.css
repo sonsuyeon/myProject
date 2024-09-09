@@ -2,21 +2,12 @@
 @import url("./../css/port.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css");
 html {
-<<<<<<< HEAD
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-=======
-    /* font-size: 62.5%; */
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
 }
 body {
   color: #555;
@@ -48,26 +39,15 @@ img {
 
 /* common */
 .myportMain_sec {
-<<<<<<< HEAD
   display: block;
   box-sizing: border-box;
   max-width: 1200px;
   width: 100%;
-  padding: 56px 24px 0;
+  padding: 0 24px;
+  margin-bottom: 56px;
 }
 .myportMain_sec-tle {
   font-size: 36px;
-=======
-    display: block;
-    box-sizing: border-box;
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 24px;
-    margin-bottom: 56px;
-}
-.myportMain_sec-tle {
-    font-size: 36px;
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
 }
 .myportMain_sec-sub {
   font-size: 16px;
@@ -196,13 +176,8 @@ img {
   margin-right: 32px;
 }
 .header__name {
-<<<<<<< HEAD
   font-size: 14px;
   color: #4b8752;
-=======
-    font-size: 14px;
-    color: #4b8752;
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
 }
 .header__link {
   display: inline-block;
@@ -219,14 +194,9 @@ img {
 ========  about ========
 ========================*/
 .about {
-<<<<<<< HEAD
   box-sizing: border-box;
   display: block;
-=======
-    box-sizing: border-box;
-    display: block;
-    padding-top: 56px;
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
+  padding-top: 56px;
 }
 .about__tle {
   font-size: 36px;
@@ -339,7 +309,6 @@ img {
 ========================*/
 .myskill {
   min-height: auto;
-  padding-bottom: 80px;
 }
 .myskill__inner {
   max-width: 1000px;
@@ -392,6 +361,7 @@ img {
 }
 .myskill-bottom__name {
   font-weight: 400;
+  margin-right: 20px;
 }
 
 /*========================
@@ -409,6 +379,7 @@ img {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .myProject__hover {
   display: none;
@@ -423,11 +394,11 @@ img {
   text-align: center;
   align-items: center;
   transition: all 0.3s;
+  padding: 20px;
 }
 .myProject__item {
   position: relative;
-  width: 50%;
-  max-width: 350px;
+  width: 49%;
   box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
   margin-bottom: 24px;
 }
@@ -436,7 +407,7 @@ img {
 }
 .myProject__thum {
   width: 100%;
-  height: 240px;
+  height: 250px;
 }
 .myProject__thum img {
   width: 100%;
@@ -681,6 +652,9 @@ img {
 @media only screen and (max-width: 1000px) {
 }
 @media only screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
   .header {
     width: 95%;
   }
@@ -690,7 +664,7 @@ img {
   /* common */
   .myportMain_sec {
     max-width: 768px;
-    padding: 3.2rem 1.6rem 0;
+    padding: 0 1.6rem 0;
   }
   .myportMain_sec-tle {
     font-size: 2.4rem;
@@ -699,6 +673,10 @@ img {
   .myportMain_sec-sub {
     font-size: 1.4rem;
     margin-bottom: 2.4rem;
+  }
+  .intro {
+    align-items: flex-start;
+    padding-top: 10rem;
   }
   .intro__top {
     font-size: 2.4rem;
@@ -746,168 +724,13 @@ img {
   .about-keyword__item::before {
     display: inline-block;
     content: "#";
-<<<<<<< HEAD
   }
   .about-more {
     display: none;
   }
   .about-intro__top {
-    font-size: 22px;
-=======
-}
-.about-more {
-    margin-top: 36px;
-    display: flex;
-    justify-content: center;
-}
-.about-more__item {
-    width: 100px;
-    margin: 0 5px;
-    text-align: center;
-}
-.about-more__photo {
-    display: block;
-    width: 70px;
-    height: 70px;
-    background-color: #fff;
-    border: 1px solid;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    background-size: 24px 24px;
-    margin-bottom: 16px;
-}
-.about-more__photo1 {
-    background-image: url(../images/about/moreLink__off.png);
-}
-.about-more__photo2 {
-    background-size: 30px 30px;
-    background-image: url(../images/about/download__off.png);
-}
-.about-more__desc {
-    font-size: 16px;
-    word-break: keep-all;
-}
-
-.about-intro__top {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 24px;
-}
-.about-intro__name {
-    font-size: 20px;
-    font-weight: bold;
-}
-.about-intro__desc {
-    word-break: keep-all;
-    max-width: 780px;
-    padding-right: 30px;
-}
-.about-intro__desc-inner {
-    font-size: 20px;
-    font-weight: 100;
-    margin-bottom: 24px;
-}
-.about-intro__desc-inner:last-child {
-    margin-bottom: 0;
-}
-
-/*========================
-========  myskill ========
-========================*/
-.myskill {
-    min-height: auto;
-}
-.myskill__inner {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.myskill__tle {
-    font-size: 36px;
-    margin-bottom: 24px;
-    color: #292929;
-}
-.myskill__tle-more {
-    font-size: 24px;
-}
-
-.myskill-top {
-    margin-bottom: 24px;
-}
-.myskill-top__list {
-    display: flex;
-}
-.myskill-top__item {
-    width: calc(33.333% - 30px);
-    width: 33.3333%;
-    font-size: 16px;
-    margin: 0;
-    box-sizing: border-box;
-}
-.myskill-top__name {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-.myskill-top__text {
-    margin-bottom: 4px;
-}
-.myskill-top__text::before {
-    content: "@";
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.myskill-bottom__list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-.myskill-bottom__item {
-    width: auto;
-    font-size: 16px;
-    margin-left: 0;
-}
-.myskill-bottom__name {
-    font-weight: 400;
-    margin-right: 20px;
-}
-
-/*========================
-========  myProject ========
-========================*/
-.myProject {
-    min-height: auto;
-}
-.myProject__inner {
-    max-width: 1000px;
-    width: 100%;
-}
-.myProject__list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.myProject__hover {
-    display: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 16px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    align-items: center;
-    transition: all 0.3s;
-    padding: 20px;
-}
-.myProject__item {
-    position: relative;
-    width: 50%;
-    box-shadow: 3px 3px 15px rgba(170, 170, 170, 0.2);
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
-    margin-bottom: 24px;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
   }
   .about-intro__name {
     font-size: 20px;
@@ -915,10 +738,7 @@ img {
   .about-intro__desc {
     padding-right: 0;
   }
-  .about-intro__desc-inner {
-    font-size: 16px;
-<<<<<<< HEAD
-  }
+
   /*========================
   ========  about ========
   ========================*/
@@ -932,8 +752,8 @@ img {
     margin: 16px auto;
   }
   .about-intro__desc-inner {
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
   }
   /*========================
   ========  myskill ========
@@ -968,170 +788,6 @@ img {
     text-transform: uppercase;
   }
   /*========================
-=======
-    text-align: center;
-    word-break: keep-all;
-}
-
-/*========================
-========  footer ========
-========================*/
-.footer {
-    background: #ddd;
-    text-align: center;
-}
-.footer__inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 24px 0;
-}
-.footer__desc-text {
-    margin-bottom: 4px;
-}
-.footer__desc-copy {
-    font-size: 14px;
-}
-
-@media only screen and (max-width: 1000px) {
-}
-@media only screen and (max-width: 768px) {
-    html {
-        font-size: 62.5%;
-    }
-    .header {
-        width: 95%;
-    }
-    .header.topfixed {
-        width: 100%;
-    }
-    /* common */
-    .myportMain_sec {
-        max-width: 768px;
-        padding: 3.2rem 1.6rem 0;
-    }
-    .myportMain_sec-tle {
-        font-size: 2.4rem;
-        margin-bottom: 1.2rem;
-    }
-    .myportMain_sec-sub {
-        font-size: 1.4rem;
-        margin-bottom: 2.4rem;
-    }
-    .intro {
-        align-items: flex-start;
-        padding-top: 10rem;
-    }
-    .intro__top {
-        font-size: 2.4rem;
-    }
-    .intro__coding {
-        font-size: 2rem;
-        padding: 0 1.6rem;
-    }
-    .intro__coding-left {
-        margin-left: 3rem;
-    }
-    /*========================
-  ========  about ========
-  ========================*/
-    .about__tle {
-        font-size: 28px;
-    }
-    .about__wrap {
-        display: block;
-    }
-    .about-left {
-        margin: 0 auto;
-    }
-    .about-profile {
-        width: 180px;
-        height: 180px;
-        background-size: 120px;
-    }
-    .about-keyword {
-        margin: 12px 0 32px;
-    }
-    .about-keyword__item {
-        display: inline-block;
-        padding: 5px 10px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        font-size: 20px;
-        font-style: italic;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    .about-keyword__item:hover {
-        background: rgb(110, 110, 110);
-    }
-    .about-keyword__item::before {
-        display: inline-block;
-        content: "#";
-    }
-    .about-more {
-        display: none;
-    }
-    .about-intro__top {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-    }
-    .about-intro__name {
-        font-size: 20px;
-    }
-    .about-intro__desc {
-        padding-right: 0;
-    }
-
-    /*========================
-  ========  about ========
-  ========================*/
-    .about {
-        padding-top: 36px;
-    }
-    .about__wrap {
-        display: block;
-    }
-    .about-more {
-        margin: 16px auto;
-    }
-    .about-intro__desc-inner {
-        font-size: 1.4rem;
-        margin-bottom: 0.4rem;
-    }
-    /*========================
-  ========  myskill ========
-  ========================*/
-    .myportMain_sec-tle.myStudy__tle {
-        margin-bottom: 0.8rem;
-    }
-    .myskill-top__list {
-        flex-direction: column;
-    }
-    .myskill-top__item {
-        width: 100%;
-        margin-bottom: 1.6rem;
-    }
-    .myskill-top__item:last-child {
-        margin-bottom: 0;
-    }
-    .myskill-top__name {
-        font-size: 1.6rem;
-        margin-bottom: 0.8rem;
-    }
-    .myskill-top__text {
-        font-size: 1.4rem;
-        margin-bottom: 0.4rem;
-    }
-    .myskill-bottom__name {
-        font-size: 1.4rem;
-    }
-    .myportMain_sec-tle.myskill__tle {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-    }
-    /*========================
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
   ========  mywork ========
   ========================*/
   .myWork__thum {
@@ -1153,44 +809,24 @@ img {
   /*========================
     ========  myProject ========
     ========================*/
-<<<<<<< HEAD
   .myProject {
     display: block;
     min-height: auto;
   }
   .myProject__item {
     width: 100%;
-    max-width: 50rem;
     margin-bottom: 1.6rem;
   }
   .myProject__thum {
-    height: 300px;
+    height: auto;
   }
   .myProject__item:last-child {
     margin-bottom: 0;
   }
+  .myProject__hover {
+    padding: 2rem;
+  }
   /*========================
-=======
-    .myProject {
-        display: block;
-        min-height: auto;
-    }
-    .myProject__item {
-        width: 100%;
-        max-width: 50rem;
-        margin-bottom: 1.6rem;
-    }
-    .myProject__thum {
-        height: 300px;
-    }
-    .myProject__item:last-child {
-        margin-bottom: 0;
-    }
-    .myProject__hover {
-        padding: 2rem;
-    }
-    /*========================
->>>>>>> f5abfb381452d0fdc017def7805c5dfaabdfa5f5
   ========  myStudy ========
   ========================*/
   .myStudy__list {
