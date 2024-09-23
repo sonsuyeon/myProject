@@ -41,7 +41,7 @@ img {
 .myportMain_sec {
   display: block;
   box-sizing: border-box;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
   padding: 0 24px;
   margin-bottom: 56px;
