@@ -1,0 +1,664 @@
+/* 
+* common
+*/
+html {
+    font-size: 62.5%;
+    font-size: 3.13vw;
+}
+main {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.mo {
+    display: none;
+}
+.featured_sec {
+    width: 1140px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* notice */
+.notice-wrap {
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #e1e1e1;
+    background: #e1e1e1;
+}
+.notice-wrap .tle {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #323232;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.25s;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+}
+.notice-wrap .tle::after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin: -8px 0 0 8px;
+    border: solid #323232;
+    border-width: 0 1px 1px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: all 0.25s;
+}
+.notice-wrap .content-wrap {
+    padding: 20px 0 56px;
+    display: none;
+}
+.notice-wrap .open {
+    background: transparent;
+}
+.notice-wrap .open::after {
+    margin-top: 3px;
+    transform: rotate(-135deg);
+}
+.notice-wrap .notice_cont {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.notice-wrap .notice_cont li {
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding-left: 15px;
+    font-weight: 400;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #323232;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.notice-wrap .notice_cont li:before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 1px;
+    background-color: #323232;
+}
+
+/* 
+* ballo bag
+*/
+.baloBag .effect_wrap {
+    position: absolute;
+    top: 14%;
+    width: 32.2%;
+    height: 40rem;
+    left: 58.7%;
+    background-position: 0 -100%;
+    animation: rolling_txt 8s cubic-bezier(0.4, 0, 1, 1) infinite;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-image: url(../../assets/images/jestina/balloBag/rolling.png);
+    text-indent: -9999px;
+    opacity: 1;
+    background-position: 0 1167px;
+}
+@keyframes rolling_txt {
+    /* 첫번째 이미지 */
+    0% {
+        background-position: 0 600px;
+        background-position: 0 38rem;
+    }
+    20% {
+        background-position: 0px 71.5rem;
+    }
+    21% {
+        background-position: 0px 71.5rem;
+    }
+    22% {
+        background-position: 0px 72.8rem;
+    }
+    23% {
+        background-position: 0px 72.8rem;
+    }
+    24% {
+        background-position: 0px 74rem;
+    }
+    25% {
+        background-position: 0px 74rem;
+    }
+    /* 두번째 이미지 */
+    40% {
+        background-position: 0 106rem;
+    }
+    41% {
+        background-position: 0 106rem;
+    }
+    42% {
+        background-position: 0 107.6rem;
+    }
+    43% {
+        background-position: 0 107.6rem;
+    }
+    44% {
+        background-position: 0 108.6rem;
+    }
+    50% {
+        background-position: 0 108.6rem;
+    }
+    /* 세번째 이미지 */
+    65% {
+        background-position: 0 142rem;
+    }
+    66% {
+        background-position: 0 142rem;
+    }
+    67% {
+        background-position: 0 143.5rem;
+    }
+    68% {
+        background-position: 0 143.5rem;
+    }
+    70% {
+        background-position: 0 144.5rem;
+    }
+    75% {
+        background-position: 0 144.5rem;
+    }
+    /* 네번째 이미지 */
+    86% {
+        background-position: 0px 175.5rem;
+    }
+    87% {
+        background-position: 0px 175.5rem;
+    }
+    88% {
+        background-position: 0px 176.5rem;
+    }
+    89% {
+        background-position: 0px 176.5rem;
+    }
+    90% {
+        background-position: 0px 177.5rem;
+    }
+    100% {
+        background-position: 0px 177.5rem;
+    }
+}
+.baloBag .featured_gif-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    animation-timing-function: ease-in-out;
+}
+.baloBag .gif01 .featured_gif-wrap {
+    animation: gitEffect1 6s steps(1) infinite forwards;
+    animation-timing-function: ease-in-out;
+}
+.baloBag .gif02 .featured_gif-wrap {
+    animation: gitEffect2 6s steps(1) infinite forwards;
+    animation-timing-function: ease-in-out;
+}
+.baloBag .featured_link-more {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 85px;
+    width: 100%;
+}
+@keyframes gitEffect1 {
+    0% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item01.jpg");
+    }
+    30% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item02.jpg");
+    }
+    35% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item02.jpg");
+    }
+    60% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item03.jpg");
+    }
+    70% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item03.jpg");
+    }
+    100% {
+        background-image: url("../../assets/images/jestina/balloBag/sec01_item01.jpg");
+    }
+}
+@keyframes gitEffect2 {
+    0% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item01.jpg");
+    }
+    30% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item02.jpg");
+    }
+    35% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item02.jpg");
+    }
+    60% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item03.jpg");
+    }
+    70% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item03.jpg");
+    }
+    100% {
+        background-image: url("https://webimg.jestina.co.kr/UpData/jestina/2024/featured/0627_ballo_haul/sec02_item01.jpg");
+    }
+}
+@media (max-width: 768px) {
+    .baloBag .effect_wrap {
+        position: absolute;
+        top: 45%;
+        width: 81%;
+        height: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-position: 0 -100%;
+        /* animation: rolling_txt 9s linear infinite backwards; */
+        background-repeat: repeat-y;
+        background-size: 100% auto;
+        background-image: url(../../assets/images/jestina/balloBag/mo_rolling2.png);
+        text-indent: -9999px;
+        opacity: 1;
+        background-position: 0 43rem;
+    }
+    @keyframes rolling_txt {
+        /* 첫번째 이미지 */
+        0% {
+            background-position: 0 43rem;
+        }
+        7% {
+            background-position: 0 60rem;
+        }
+        15% {
+            background-position: 0 82rem;
+        }
+        16% {
+            background-position: 0 82rem;
+        }
+        17% {
+            background-position: 0 83rem;
+        }
+        18% {
+            background-position: 0 83rem;
+        }
+        22% {
+            background-position: 0 84rem;
+        }
+        23% {
+            background-position: 0 84rem;
+        }
+        /* 두번째 이미지 */
+        33% {
+            background-position: 0 113rem;
+        }
+        34% {
+            background-position: 0 113rem;
+        }
+        35% {
+            background-position: 0 115rem;
+        }
+        36% {
+            background-position: 0 115rem;
+        }
+        37% {
+            background-position: 0 119rem;
+        }
+        38% {
+            background-position: 0 123rem;
+        }
+        40% {
+            background-position: 0 123rem;
+        }
+        44% {
+            background-position: 0 123rem;
+        }
+        45% {
+            background-position: 0 123rem;
+        }
+        /* 세번째 이미지 */
+        58% {
+            background-position: 0 157rem;
+        }
+        60% {
+            background-position: 0 157rem;
+        }
+        61% {
+            background-position: 0 159rem;
+        }
+        62% {
+            background-position: 0 159rem;
+        }
+        63% {
+            background-position: 0 161rem;
+        }
+        64% {
+            background-position: 0 161rem;
+        }
+        65% {
+            background-position: 0 163rem;
+        }
+        70% {
+            background-position: 0 163rem;
+        }
+        /* 네번째 이미지 */
+        80% {
+            background-position: 0 190rem;
+        }
+        81% {
+            background-position: 0 190rem;
+        }
+        82% {
+            background-position: 0 192rem;
+        }
+        83% {
+            background-position: 0 192rem;
+        }
+        84% {
+            background-position: 0 194rem;
+        }
+        85% {
+            background-position: 0 194rem;
+        }
+        86% {
+            background-position: 0 196rem;
+        }
+        87% {
+            background-position: 0 196rem;
+        }
+        88% {
+            background-position: 0 198rem;
+        }
+        100% {
+            background-position: 0 198rem;
+        }
+    }
+    .baloBag .featured_sec {
+        max-width: 960px;
+        min-width: 280px;
+    }
+    .baloBag .gif01.featured_sec,
+    .baloBag .gif02.featured_sec {
+        height: 61.5rem;
+    }
+    .baloBag .gif01.featured_sec img,
+    .baloBag .gif02.featured_sec img {
+        position: relative;
+        z-index: -1;
+    }
+    .baloBag .featured_gif-wrap {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-position: 0 0;
+        background-size: 100% 100%;
+        z-index: 100;
+    }
+    .baloBag .gif01 .featured_gif-wrap {
+        animation: gitEffect1 7s steps(1) infinite forwards;
+        animation-timing-function: ease-in-out;
+    }
+    .baloBag .gif02 .featured_gif-wrap {
+        animation: gitEffect2 5s steps(1) infinite forwards;
+        animation-timing-function: ease-in-out;
+    }
+    .baloBag .featured_link-more {
+        height: 7.5%;
+    }
+    @keyframes gitEffect1 {
+        0% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item01.jpg");
+        }
+        30% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item02.jpg");
+        }
+        35% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item02.jpg");
+        }
+        60% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item03.jpg");
+        }
+        70% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item03.jpg");
+        }
+        100% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec01_item01.jpg");
+        }
+    }
+    @keyframes gitEffect2 {
+        0% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item01.jpg");
+        }
+        30% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item02.jpg");
+        }
+        35% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item02.jpg");
+        }
+        60% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item03.jpg");
+        }
+        70% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item03.jpg");
+        }
+        100% {
+            background-image: url("../../assets/images/jestina/balloBag/m_sec02_item01.jpg");
+        }
+    }
+}
+/* 
+* womensWatch
+*/
+.womensWatch .watch_progressbar {
+    position: absolute;
+    bottom: 19px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 96.5%;
+    height: 2.5px;
+    background: #ffffff3d;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 100;
+}
+.womensWatch .watch_progressbar span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: left center;
+    background: #fff;
+    border-radius: 7px;
+    transform: scaleX(0);
+    transition-timing-function: linear;
+}
+.womensWatch .watch_mainSildeItem {
+    width: 100%;
+}
+.womensWatch .featured_btn-wrap {
+    position: absolute;
+    display: flex;
+    bottom: 10%;
+    right: 7%;
+    max-width: 48%;
+    width: 100%;
+    height: 19%;
+}
+.womensWatch .featured-link {
+    position: absolute;
+    display: block;
+    width: 20%;
+    height: 10%;
+    z-index: 100;
+}
+.womensWatch .sec02 .featured-link_wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 940px;
+    height: 474px;
+}
+.womensWatch .sec02 .featured-link {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url(../assets/images/jestina/watch/btn.png) no-repeat;
+    background-size: 100% 100%;
+    border-radius: 20px;
+}
+.womensWatch .sec02 .featured-link_wrap.link_wrap01 {
+    top: 80px;
+}
+.womensWatch .sec02 .link_wrap01 .featured-link.link01 {
+    top: 97px;
+    left: 651px;
+}
+.womensWatch .sec02 .link_wrap01 .featured-link.link02 {
+    top: 277px;
+    left: 564px;
+}
+.womensWatch .sec02 .link_wrap01 .featured-link.link03 {
+    top: 182px;
+    right: 154px;
+}
+.womensWatch .sec02 .featured-link_wrap.link_wrap02 {
+    top: 594px;
+}
+.womensWatch .sec02 .link_wrap02 .featured-link.link01 {
+    top: 143px;
+    left: 135px;
+}
+.womensWatch .sec02 .link_wrap02 .featured-link.link02 {
+    top: 315px;
+    left: 323px;
+}
+.womensWatch .sec02 .featured-link_wrap.link_wrap03 {
+    top: 1108px;
+}
+.womensWatch .sec02 .link_wrap03 .featured-link.link01 {
+    top: 279px;
+    left: 567px;
+}
+.womensWatch .sec02 .link_wrap03 .featured-link.link02 {
+    top: 227px;
+    left: 742px;
+}
+
+.m_watch_item_swiper {
+    position: absolute;
+    width: 84%;
+    height: 83%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7%;
+}
+.wacth_item-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wacth_item-link {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url(../assets/images/jestina/watch/m_btn-more.png) no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    opacity: 1;
+}
+.wacth_slide01 .wacth_item-link.link01 {
+    top: 49.2%;
+    left: 10.3%;
+}
+.wacth_slide01 .wacth_item-link.link02 {
+    top: 48.55%;
+    left: 85.2%;
+}
+.wacth_slide02 .wacth_item-link.link01 {
+    top: 33.6%;
+    left: 20%;
+}
+.wacth_slide02 .wacth_item-link.link02 {
+    top: 55.9%;
+    left: 75%;
+}
+.wacth_slide03 .wacth_item-link.link01 {
+    top: 29.3%;
+    left: 12%;
+}
+.wacth_slide03 .wacth_item-link.link02 {
+    top: 68%;
+    left: 73.3%;
+}
+.womensWatch .sec02 .swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: 0.3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    bottom: 3.8rem;
+    left: 50%;
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(-50%);
+}
+.womensWatch .sec02 .swiper-pagination-bullet {
+    background: #7d818f !important;
+    opacity: 1;
+}
+.womensWatch .sec02 .swiper-pagination-bullet-active {
+    background: #ffffff !important;
+}
+
+/* 
+* common
+*/
+@media (max-width: 768px) {
+    .mo {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+    /* notice */
+    .notice-wrap .tle {
+        padding: 1rem 0 !important;
+        font-size: 1.1rem;
+    }
+    .notice-wrap .content-wrap {
+        padding: 1rem 0 2rem;
+    }
+    .notice-wrap .notice_cont {
+        width: 90%;
+    }
+    .notice-wrap .tle::after {
+        margin: -6px 0 0 6px;
+        padding: 2.5px;
+    }
+    .notice-wrap .notice_cont li {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .notice-wrap .notice_cont li:before {
+        top: 14px;
+        width: 6px;
+        height: 1px;
+    }
+}

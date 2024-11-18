@@ -41,6 +41,8 @@ ol[role="list"] {
 body {
     min-height: 100vh;
     line-height: 1.5;
+    font-size: 62.5%;
+    font-size: 3.13vw;
 }
 
 h1,
