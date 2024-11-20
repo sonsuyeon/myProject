@@ -630,7 +630,404 @@ main {
 /* 
 * IU Magazine
 */
+.IU-Magazine .tlt {
+    animation: fadeIn ease-in 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.IU-Magazine .tlt img {
+    width: 100%;
+}
+.IU-Magazine .tlt01 {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 342px;
+}
+.IU-Magazine .tlt02 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.8s;
+}
+.IU-Magazine .tlt03 {
+    position: absolute;
+    top: 40.5%;
+    left: 64.5%;
+    animation-delay: 1.5s;
+}
+.IU-Magazine .rotate {
+    position: absolute;
+    right: 1.5%;
+    top: 10.5%;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: rotate_txt;
+}
+.IU-Magazine .rolling {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    animation: textSlide 60s linear 0s infinite;
+    background-image: url(../assets/images/jestina/iu_magazine/rolling02.png);
+    background-repeat: repeat-x;
+    background-position: 0 0%;
+}
+.IU-Magazine .event_link {
+    position: absolute;
+    bottom: 30%;
+    right: 22%;
+    width: 30%;
+    height: 10%;
+}
+.IU-Magazine .event_link .icon {
+    position: absolute;
+    right: 13%;
+    top: 38%;
+}
+.IU-Magazine .featured-link__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.IU-Magazine .featured-link__list {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.IU-Magazine .featured-link__item {
+    position: absolute;
+}
+.IU-Magazine .featured-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.IU-Magazine .icon {
+    position: absolute;
+    animation-duration: 1.5s;
+}
+.IU-Magazine .sec03 .item01 {
+    width: 45%;
+    height: 17%;
+    right: 4%;
+    top: 16%;
+}
+.IU-Magazine .sec03 .item02 {
+    width: 45%;
+    height: 19%;
+    left: 4%;
+    top: 43.8%;
+}
+.IU-Magazine .sec03 .item03 {
+    width: 43%;
+    height: 19%;
+    right: 1%;
+    top: 75%;
+}
+.IU-Magazine .sec03 .item01 .icon {
+    right: 20%;
+    top: 56.5%;
+}
+.IU-Magazine .sec03 .item02 .icon {
+    right: 46%;
+    top: 54%;
+}
+.IU-Magazine .sec03 .item03 .icon {
+    right: 51%;
+    top: 91%;
+}
+.IU-Magazine .sec04 .item01 {
+    width: 36%;
+    height: 26%;
+    right: 12%;
+    top: 41%;
+}
+.IU-Magazine .sec04 .item02 {
+    width: 36%;
+    height: 17%;
+    right: 12%;
+    top: 71%;
+}
+.IU-Magazine .sec04 .item01 .icon {
+    top: 91%;
+    left: 24%;
+}
+.IU-Magazine .sec04 .item02 .icon {
+    top: 90%;
+    left: 33%;
+}
 
+.IU-Magazine .sec05 .item01 {
+    width: 39%;
+    height: 13.6%;
+    left: 8%;
+    top: 28%;
+}
+.IU-Magazine .sec05 .item02 {
+    width: 39%;
+    height: 24%;
+    left: 58%;
+    top: 62%;
+}
+.IU-Magazine .sec05 .item01 .icon {
+    top: 60%;
+    left: 86%;
+}
+.IU-Magazine .sec05 .item02 .icon {
+    top: 45%;
+    left: 52%;
+}
+.IU-Magazine .sec06 .item01 {
+    width: 45%;
+    height: 4%;
+    left: 49%;
+    top: 80%;
+}
+.IU-Magazine .sec06 .item02 {
+    width: 39%;
+    height: 4%;
+    left: 53%;
+    top: 84%;
+}
+.IU-Magazine .sec06 .item01 .icon {
+    top: 48%;
+    right: 5%;
+}
+.IU-Magazine .sec06 .item02 .icon {
+    top: 30%;
+    right: 14%;
+}
+
+.IU-Magazine .sec07 .item01 {
+    width: 36%;
+    height: 26%;
+    right: 11%;
+    top: 24%;
+}
+.IU-Magazine .sec07 .item02 {
+    width: 36%;
+    height: 17.5%;
+    right: 54%;
+    top: 64.3%;
+}
+.IU-Magazine .sec07 .item01 .icon {
+    top: 88%;
+    left: 31%;
+}
+.IU-Magazine .sec07 .item02 .icon {
+    top: 87%;
+    left: 43%;
+}
+.IU-Magazine .videoArea {
+    position: absolute;
+    top: 18.5%;
+    left: 51.8%;
+    width: 40.5%;
+    height: 59.3%;
+    z-index: 1;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes rotate_txt {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes textSlide {
+    0% {
+        background-position-x: 1000%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+}
+@media (max-width: 768px) {
+    .IU-Magazine .tlt01 {
+        top: 33%;
+        width: 45%;
+    }
+    .IU-Magazine .tlt02 {
+        top: 71%;
+        width: 41%;
+    }
+    .IU-Magazine .tlt03 {
+        top: 42%;
+        left: 71%;
+        width: 22.5% !important;
+    }
+    .IU-Magazine .rotate {
+        top: 20%;
+        width: 13% !important;
+    }
+    .IU-Magazine .rolling {
+        height: 1rem;
+        animation: textSlide 30s linear 0s infinite;
+        background-image: url(../assets/images/jestina/iu_magazine/m_rolling02.png);
+        background-size: auto 50%;
+    }
+    .IU-Magazine .event_link {
+        bottom: 24%;
+        right: 17%;
+        width: 22%;
+        height: 10%;
+    }
+    .IU-Magazine .event_link .icon {
+        right: 13%;
+        top: 38%;
+    }
+    .IU-Magazine .featured-link__item .icon {
+        animation-duration: 1.5s;
+        /* width: 5% !important; */
+    }
+    .IU-Magazine .sec03 .item01 {
+        position: absolute;
+        width: 95%;
+        height: 9%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 32%;
+    }
+    .IU-Magazine .sec03 .item02 {
+        position: absolute;
+        width: 95%;
+        height: 13%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 52%;
+    }
+    .IU-Magazine .sec03 .item03 {
+        position: absolute;
+        width: 100%;
+        height: 11%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 86%;
+    }
+    .IU-Magazine .sec03 .item01 .icon {
+        left: 19%;
+        top: 53.5%;
+    }
+    .IU-Magazine .sec03 .item02 .icon {
+        right: 18%;
+        top: 76.5%;
+    }
+    .IU-Magazine .sec03 .item03 .icon {
+        right: 29%;
+        top: 58.5%;
+    }
+    .IU-Magazine .sec04 .item01 {
+        width: 40%;
+        height: 30.5%;
+        right: 0;
+        top: 40%;
+    }
+    .IU-Magazine .sec04 .item02 {
+        width: 56%;
+        height: 16%;
+        right: 3%;
+        top: 79%;
+    }
+    .IU-Magazine .sec04 .item01 .icon {
+        top: 92.8%;
+        left: 35%;
+    }
+    .IU-Magazine .sec04 .item02 .icon {
+        top: 85%;
+        left: 27%;
+    }
+    .IU-Magazine .sec05 .item01 {
+        width: 73%;
+        height: 10%;
+        left: 15%;
+        top: 40%;
+    }
+    .IU-Magazine .sec05 .item02 {
+        width: 39%;
+        width: 78%;
+        height: 22%;
+        left: 10%;
+        top: 75%;
+    }
+    .IU-Magazine .sec05 .item01 .icon {
+        top: 60%;
+        left: 86%;
+    }
+    .IU-Magazine .sec05 .item02 .icon {
+        top: 50.5%;
+        left: 54%;
+    }
+
+    .IU-Magazine .sec06 .item01 {
+        width: 87%;
+        height: 3.5%;
+        left: 9%;
+        top: 88%;
+    }
+    .IU-Magazine .sec06 .item02 {
+        width: 87%;
+        height: 3.5%;
+        left: 9%;
+        top: 91.7%;
+    }
+    .IU-Magazine .sec06 .item01 .icon {
+        top: 48%;
+        right: 5%;
+    }
+    .IU-Magazine .sec06 .item02 .icon {
+        top: 30%;
+        right: 14%;
+    }
+    .IU-Magazine .sec07 .item01 {
+        width: 39%;
+        height: 34%;
+        right: 2%;
+        top: 21.5%;
+    }
+    .IU-Magazine .sec07 .item02 {
+        width: 45%;
+        height: 24%;
+        right: 51%;
+        top: 65%;
+    }
+    .IU-Magazine .sec07 .item01 .icon {
+        top: 93%;
+        left: 46%;
+    }
+    .IU-Magazine .sec07 .item02 .icon {
+        top: 89%;
+        left: 39%;
+    }
+    .IU-Magazine .videoArea {
+        top: 26.5%;
+        left: 50.5%;
+        transform: translateX(-50%);
+        width: 77.7%;
+        /* height: 50.3%; */
+    }
+}
 /* 
 * common
 */

@@ -141,7 +141,7 @@ function black_collection_scroll01() {
     scrollMotion01(tl, ".tlt01", -50);
 }
 function scrollMotion01(tl, obj, off) {
-    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 }).setTween(tl).reverse(true).addTo(controller);
+    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 });
 }
 
 function black_collection_scroll02() {
@@ -151,5 +151,5 @@ function black_collection_scroll02() {
     scrollMotion02(tl, ".tlt02", -50);
 }
 function scrollMotion02(tl, obj, off) {
-    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 }).setTween(tl).reverse(true).addTo(controller);
+    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 });
 }

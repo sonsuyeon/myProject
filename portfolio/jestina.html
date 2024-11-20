@@ -1,91 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>suuyom's portfolio</title>
-        <link rel="stylesheet" href="/assets/css/style.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script defer src="/assets/js/common.js"></script>
-    </head>
-    <body>
-        <main class="myPort" id="myPort">
-            <button class="myPort__ico-close" type="button" onclick="javascript:window.close()">
-                <img src="/assets/images/ico/close.png" alt="닫기 버튼" />
-            </button>
-            <section class="myPort__inner">
-                <section class="myPort__heading">
-                    <span class="myPort__name-sub"> ADAPTIVE WEBSITE [PC, MOB]</span>
-                    <h2 class="myPort__name">제이에스티나</h2>
-                </section>
-                <section class="myPort__thum">
-                    <div class="myPort__thum-img">
-                        <img src="/assets/images/jestina/main_pc.png" alt="제이에스티나 메인 썸네일" />
-                    </div>
-                </section>
-                <section class="myPort__summary">
-                    <div class="myPort__more">
-                        <a class="myPort__more-link" href="https://www.jestina.co.kr/"> 웹사이트 바로가기 </a>
-                        <a class="myPort__more-link" href="/portfolio/jestina_detail01.html"> detail review </a>
-                    </div>
-                    <div class="myPort__overView-text">
-                        <h3 class="myPort__overView-tle-sub">■ 자사몰 운영개선 및 유지보수 퍼블리싱</h3>
-                        <ul class="myPort__overView-list">
-                            <li class="myPort__overView-item">A/S 접수 및 조회 페이지 신규작업</li>
-                            <li class="myPort__overView-item">쿠폰적용상품보기 페이지 신규작업</li>
-                            <li class="myPort__overView-item">검색 결과 화면 개선 고도화</li>
-                            <li class="myPort__overView-item">쿠폰 구매 가능 상품보기</li>
-                            <li class="myPort__overView-item">장바구니페이지 개선</li>
-                            <li class="myPort__overView-item">비로그인 대상 앱푸시 발송 페이지</li>
-                            <li class="myPort__overView-item">메인페이지 서브메뉴 영역추가, GNB개선</li>
-                            <li class="myPort__overView-item">(모바일) 검색어 자동완성 기능추가</li>
-                            <li class="myPort__overView-item">(Admin) 상품 카테고리 일괄관리 기능추가</li>
-                        </ul>
-                        <h3 class="myPort__overView-tle-sub">■ 회원 프로모션 및 상시 기획전,이벤트 퍼블리싱</h3>
-                        <ul class="myPort__overView-list">
-                            <li class="myPort__overView-item">2023년 패밀리데이 세일, 블랙프라이데이, 주얼리팝업 스토어, 핸드백 팝업 스토어 외 이벤트 42건& 기획전 45건 퍼블리싱 작업</li>
-                            <li class="myPort__overView-item">2024년 화이트데이, 성년의날, 패밀리데이 세일,제이위크 외 이벤트 30건 기획전 35건 퍼블리싱 작업</li>
-                        </ul>
-                    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>suuyom's portfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="/assets/js/common.js"></script>
+  </head>
+  <body>
+    <style>
+              .flip {
+        width: 200px;
+        height: 250px;
+        perspective: 1100px;
+      }
 
-                    <div class="myPort-desc">
-                        <h4 class="myPort-desc__head">&lt; 제이에스티나 작업 &gt;</h4>
-                        <ul class="myPort-desc__list">
-                            <li class="myPort-desc__item">
-                                <span class="myPort-desc__tle">작업기간</span>
-                                <span class="myPort-desc__text"> 2023.04 ~ </span>
-                            </li>
-                            <li class="myPort-desc__item">
-                                <span class="myPort-desc__tle">기술스택</span>
-                                <span class="myPort-desc__text"> HTML5,CSS3,JavaScript,jQuery</span>
-                            </li>
-                            <li class="myPort-desc__item">
-                                <span class="myPort-desc__tle">협업툴</span>
-                                <span class="myPort-desc__text"> git</span>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </section>
-        </main>
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: .4s;
+        transform-style: preserve-3d;
+      }
 
-        <script>
-            AOS.init();
-            const mySwiper = new Swiper(".swiper-container", {
-                slidesPerView: "1",
-                spaceBetween: 1,
-                loop: false,
-                // If we need pagination
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    renderBullet: function (index, className) {
-                        return '<span class="' + className + '">' + menu[index] + "</span>";
-                    },
-                },
+      .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .front {
+        background: red;
+      }
+
+      /* // 뒷면은 사전에 미리 뒤집기 */
+      .back {
+        background: royalblue;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* // 호버 시 뒤집기 */
+      .flip:hover .card {
+        transform: rotateY(180deg);
+      }
+    </style>
+    <main class="myPort" id="myPort">
+      <button class="myPort__ico-close" type="button" onclick="javascript:window.close()">
+        <img src="/assets/images/ico/close.png" alt="닫기 버튼" />
+      </button>
+      <section class="myPort__inner">
+        <section class="myPort__heading">
+          <span class="myPort__name-sub"> ADAPTIVE WEBSITE [PC, MOB]</span>
+          <h2 class="myPort__name">제이에스티나</h2>
+        </section>
+        <section class="myPort__thum">
+          <div class="myPort__thum-img">
+            <img src="/assets/images/jestina/main_pc.png" alt="제이에스티나 메인 썸네일" />
+          </div>
+        </section>
+        <section class="myPort__summary">
+          <div class="myPort__more">
+            <a class="myPort__more-link" href="https://www.jestina.co.kr/"> 웹사이트 바로가기 </a>
+            <a class="myPort__more-link" href="/portfolio/jestina_detail01.html"> detail review </a>
+          </div>
+          <div class="myPort__overView-text">
+            <h3 class="myPort__overView-tle-sub">■ 자사몰 운영개선 및 유지보수 퍼블리싱</h3>
+            <ul class="myPort__overView-list">
+              <li class="myPort__overView-item">A/S 접수 및 조회 페이지 신규작업</li>
+              <li class="myPort__overView-item">쿠폰적용상품보기 페이지 신규작업</li>
+              <li class="myPort__overView-item">검색 결과 화면 개선 고도화</li>
+              <li class="myPort__overView-item">쿠폰 구매 가능 상품보기</li>
+              <li class="myPort__overView-item">장바구니페이지 개선</li>
+              <li class="myPort__overView-item">비로그인 대상 앱푸시 발송 페이지</li>
+              <li class="myPort__overView-item">메인페이지 서브메뉴 영역추가, GNB개선</li>
+              <li class="myPort__overView-item">(모바일) 검색어 자동완성 기능추가</li>
+              <li class="myPort__overView-item">(Admin) 상품 카테고리 일괄관리 기능추가</li>
+            </ul>
+            <h3 class="myPort__overView-tle-sub">■ 회원 프로모션 및 상시 기획전,이벤트 퍼블리싱</h3>
+            <ul class="myPort__overView-list">
+              <li class="myPort__overView-item">2023년 패밀리데이 세일, 블랙프라이데이, 주얼리팝업 스토어, 핸드백 팝업 스토어 외 이벤트 42건& 기획전 45건 퍼블리싱 작업</li>
+              <li class="myPort__overView-item">2024년 화이트데이, 성년의날, 패밀리데이 세일,제이위크 외 이벤트 30건 기획전 35건 퍼블리싱 작업</li>
+            </ul>
+            <div class="myPort__overView-swiper swiper-container">
+              <ul class="swiper-wrapper">
+                <li class="swiper-card swiper-slide">
+                  <div class="flip">
+                    <div class="card">
+                      <!-- 앞면 -->
+                      <div class="front"></div>
+                      <!-- 뒷면 -->
+                      <div class="back">
+                        <span>baloBag</span>
+                        <a href="jestina_event01.html"> 보러가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="swiper-card swiper-slide">
+                  <div class="flip">
+                    <div class="card">
+                      <!-- 앞면 -->
+                      <div class="front"></div>
+                      <!-- 뒷면 -->
+                      <div class="back">
+                        <span>woman's watch</span>
+                        <a href="jestina_event02.html"> 보러가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="swiper-card swiper-slide">
+                  <div class="flip">
+                    <div class="card">
+                      <!-- 앞면 -->
+                      <div class="front"></div>
+                      <!-- 뒷면 -->
+                      <div class="back">
+                        <span>23아이유 매거진_Summer Breeze</span>
+                        <a href="jestina_event03.html"> 보러가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="swiper-card swiper-slide">
+                  <div class="flip">
+                    <div class="card">
+                      <!-- 앞면 -->
+                      <div class="front"></div>
+                      <!-- 뒷면 -->
+                      <div class="back">
+                        <span>sweet_day</span>
+                        <a href="jestina_event04.html"> 보러가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="swiper-card swiper-slide">
+                  <div class="flip">
+                    <div class="card">
+                      <!-- 앞면 -->
+                      <div class="front"></div>
+                      <!-- 뒷면 -->
+                      <div class="back">
+                        <span>poche</span>
+                        <a href="jestina_event05.html"> 보러가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="myPort-desc">
+            <h4 class="myPort-desc__head">&lt; 제이에스티나 작업 &gt;</h4>
+            <ul class="myPort-desc__list">
+              <li class="myPort-desc__item">
+                <span class="myPort-desc__tle">작업기간</span>
+                <span class="myPort-desc__text"> 2023.04 ~ </span>
+              </li>
+              <li class="myPort-desc__item">
+                <span class="myPort-desc__tle">기술스택</span>
+                <span class="myPort-desc__text"> HTML5,CSS3,JavaScript,jQuery</span>
+              </li>
+              <li class="myPort-desc__item">
+                <span class="myPort-desc__tle">협업툴</span>
+                <span class="myPort-desc__text"> git</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+          AOS.init();
+          const mySwiper = new Swiper(".swiper-container", {
+              slidesPerView: 1,
+              spaceBetween: 1,
+              loop: false,
+              // If we need pagination
+              autoplay: 5000,
+            //   pagination: {
+            //       el: ".swiper-pagination",
+            //       clickable: true,
+            //       renderBullet: function (index, className) {
+            //           return '<span class="' + className + '">' + menu[index] + "</span>";
+            //       },
+            //   },
+              breakpoints: {
+        // 768px 이상에서는 3개의 슬라이드를 보여줌
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // 1024px 이상에서는 5개의 슬라이드를 보여줌
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
             });
-        </script>
-    </body>
+    </script>
+  </body>
 </html>

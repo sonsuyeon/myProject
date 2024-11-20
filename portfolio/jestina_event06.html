@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" sec0ent="IE=edge" />
+    <meta name="viewport" sec0ent="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/jestina.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/css/default/animate.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="../assets/js/jestina.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+  </head>
+  <body class="poche">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+      .jestina-sub-project__wrap {
+          position: relative;
+          width: 1140px !important;
+          margin: auto;
+      }
+      section {
+          position: relative;
+      }
+      section .inner {
+          width: 100%;
+          height: auto;
+      }
+      .contentBottom {
+          display: block;
+          width: 100%;
+          height: 1px;
+      }
+
+      /* 보드게임 */
+      .gameBoard {
+          position: absolute;
+          top: 8%;
+          left: 50%;
+          transform: translate(-50%);
+          width: 72%;
+          height: 86%;
+      }
+      button#startBtn {
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          width: 21%;
+          height: 20%;
+          text-indent: -9999px;
+          border: none;
+          background: none;
+          cursor: pointer;
+      }
+      button#startBtn::after {
+          position: absolute;
+          bottom: 11%;
+          right: 16%;
+          content: "";
+          display: inline-block;
+          width: 33px;
+          height: 47px;
+          background: url(https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/cursor.png) no-repeat center;
+          animation: cursor-blink 0.7s infinite steps(1);
+      }
+      .icon {
+          position: absolute;
+          top: -7%;
+          left: 3%;
+          width: 111px;
+          height: 120px;
+      }
+      #ticket_count {
+          position: absolute;
+          top: 39.5%;
+          left: 36.5%;
+          width: 8%;
+          height: 7%;
+          font-size: 3.1rem;
+          font-weight: 600;
+          text-align: center;
+      }
+
+      /* 팝업 */
+      #layerPopup {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          padding: 20px;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          z-index: 10000;
+          background: rgba(0, 0, 0, 0.5);
+      }
+      #layerPopup > .content {
+          display: inline-block;
+          position: relative;
+          top: 49%;
+          overflow: hidden;
+          background: transparent;
+          transform: translateY(-50%) !important;
+          width: calc(100% / 5);
+      }
+      #layerPopup > .content img {
+          width: 100%;
+      }
+      #layerPopup > .content button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 18%;
+          height: 50px;
+          font: 0/0 a;
+          border: none;
+          outline: none;
+          background: none;
+          cursor: pointer;
+      }
+      #layerPopup > .content button::after {
+          margin: auto;
+          content: "\00d7";
+          font-size: 2.4rem;
+          line-height: 10px;
+          color: #333;
+      }
+
+      /* notice */
+      .notice_wrap {
+          position: relative;
+          width: 100%;
+          background-color: #b0d8f7;
+          border-top: 1px solid #4796ea;
+      }
+      .notice_list {
+          margin: 0;
+      }
+      .notice_wrap .notice_list dt {
+          text-align: center;
+          height: 60px;
+          line-height: 60px;
+      }
+      .notice_wrap .notice_list dt a {
+          position: relative;
+          display: block;
+          box-sizing: border-box;
+          color: #2f84dc;
+          font-size: 18px;
+          text-decoration: none;
+          transition: all 0.25s;
+          font-family: "Roboto", sans-serif !important;
+          font-weight: 400;
+      }
+      .notice_wrap .notice_list dt a::after {
+          display: inline-block;
+          vertical-align: middle;
+          content: "";
+          margin: -8px 0 0 8px;
+          border: solid #2f84dc;
+          border-width: 0 1px 1px 0;
+          padding: 4px;
+          transform: rotate(45deg);
+          transition: all 0.25s;
+      }
+      .notice_wrap .notice_list dd {
+          padding: 30px 0 56px;
+          margin: 0 20px;
+          display: none;
+      }
+      .notice_wrap .notice_list .open {
+          background: transparent;
+      }
+      .notice_wrap .notice_list .open::after {
+          margin-top: 3px;
+          transform: rotate(-135deg);
+      }
+      .notice_wrap .notice_list .notice_cont {
+          margin: 0 auto;
+          padding-left: 0;
+          width: 83%;
+          max-width: 100%;
+      }
+      .notice_wrap .notice_list .notice_cont li {
+          list-style-type: none;
+      }
+      .notice_wrap .notice_list .notice_cont li + li {
+          margin-top: 0.5rem;
+      }
+      .notice_wrap .notice_list .notice_cont li h2 {
+          margin: 0;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 38px;
+          color: #2f84dc;
+          text-align: left;
+          font-family: "Noto Sans KR", sans-serif !important;
+      }
+      .notice_wrap .notice_list .notice_cont li p {
+          position: relative;
+          margin: 0;
+          padding-left: 10px;
+          font-weight: 400;
+          text-align: left;
+          font-size: 20px;
+          line-height: 28px;
+          color: #2f84dc;
+          word-break: keep-all;
+          word-wrap: break-word;
+          font-family: "Noto Sans KR", sans-serif !important;
+      }
+      .notice_wrap .notice_list .notice_cont li p:before {
+          display: inline-block;
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 14px;
+          width: 5px;
+          height: 1px;
+          background-color: #2f84dc;
+      }
+
+      @keyframes cursor-blink {
+          0%,
+          100% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+      }
+      @media (max-width: 768px) {
+          @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+          @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+          body,
+          html,
+          * {
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+          }
+          .contentBottom {
+              display: block;
+              width: 100%;
+              height: 1px;
+          }
+          .jestina-sub-project__wrap {
+              width: 100%;
+              max-width: 960px;
+              min-width: 280px;
+              margin: 0 auto;
+              overflow: hidden;
+          }
+          .jestina-sub-project__wrap section {
+              width: 100%;
+              position: relative;
+              margin: 0 auto;
+              text-align: center;
+          }
+          section .inner {
+              width: 100%;
+              height: auto;
+          }
+          .w100 {
+              width: 100%;
+              vertical-align: middle;
+          }
+
+          /* 보드게임 */
+          .gameBoard {
+              position: absolute;
+              top: 7%;
+              left: 50%;
+              transform: translate(-50%);
+              width: 97%;
+              height: 88%;
+          }
+          button#startBtn {
+              position: absolute;
+              top: 0%;
+              left: 0%;
+              width: 21%;
+              height: 20%;
+              text-indent: -9999px;
+              border: none;
+              background: none;
+              cursor: pointer;
+          }
+          button#startBtn::after {
+              position: absolute;
+              bottom: 11%;
+              right: 9%;
+              content: "";
+              display: inline-block;
+              width: 25%;
+              height: 28%;
+              background: url(https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/m_cursor.png) no-repeat center;
+              animation: cursor-blink 0.7s infinite steps(1);
+              background-size: 100% auto;
+          }
+          .m_icon {
+              position: absolute;
+              top: -7%;
+              left: 3%;
+              width: 16.8%;
+              height: auto;
+          }
+          .m_icon img {
+              width: 100%;
+              background-size: 100% auto;
+          }
+          #ticket_count {
+              position: absolute;
+              top: 35.7%;
+              left: 33%;
+              width: calc(100% / 10);
+              height: calc(100% / 20);
+              font-size: 1.9rem;
+              line-height: 2.2rem;
+              font-weight: 600;
+              text-align: center;
+          }
+
+          /* 팝업 */
+          #layerPopup {
+              display: none;
+              position: fixed;
+              top: 0;
+              left: 0;
+              overflow: hidden;
+              padding: 20px;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              z-index: 10000;
+              background: rgba(0, 0, 0, 0.5);
+          }
+          #layerPopup > .content {
+              display: inline-block;
+              position: relative;
+              top: 49%;
+              overflow: hidden;
+              background: transparent;
+              transform: translateY(-50%) !important;
+              width: 82%;
+          }
+          #layerPopup > .content img {
+              width: 100%;
+          }
+          #layerPopup > .content button {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 18%;
+              height: 9%;
+              font: 0/0 a;
+              border: none;
+              outline: none;
+              background: none;
+              cursor: pointer;
+          }
+          #layerPopup > .content button::after {
+              margin: auto;
+              content: "\00d7";
+              font-size: 2.4rem;
+              line-height: 10px;
+              color: #333;
+          }
+
+          /* notice */
+          .notice_wrap {
+              width: 100%;
+              background-color: #b0d8f7;
+              border-top: 1px solid #4796ea;
+          }
+          .notice_wrap .notice_list dt {
+              text-align: center;
+          }
+          .notice_wrap .notice_list dt a {
+              position: relative;
+              display: block;
+              box-sizing: border-box;
+              color: #2f84dc;
+              font-size: 1rem;
+              text-decoration: none;
+              transition: all 0.25s;
+              padding: 1rem 0 !important;
+              font-family: "Roboto", sans-serif !important;
+              font-weight: 500;
+          }
+          .notice_wrap .notice_list dt a::after {
+              display: inline-block;
+              content: "";
+              margin: -6px 0 0 6px;
+              padding: 2.5px;
+              vertical-align: middle;
+              border: solid #2f84dc;
+              border-width: 0 1px 1px 0;
+              transform: rotate(45deg);
+              transition: all 0.25s;
+          }
+          .notice_wrap .notice_list dd {
+              display: none;
+              padding: 8px 0 33px;
+          }
+          .notice_wrap .notice_list .open {
+              background: transparent;
+          }
+          .notice_wrap .notice_list .open::after {
+              margin-top: 3px;
+              transform: rotate(-135deg);
+          }
+          .notice_wrap .notice_list .notice_cont {
+              max-width: 100%;
+              margin: 0 auto;
+              width: 80%;
+          }
+          .notice_wrap .notice_list .notice_cont li {
+              list-style: none;
+          }
+          .notice_wrap .notice_list .notice_cont li + li {
+              margin-top: 0.8rem;
+          }
+          .notice_wrap .notice_list .notice_cont li h2 {
+              margin: 0;
+              font-size: 0.93rem;
+              font-weight: 600;
+              line-height: 1.8rem;
+              color: #2f84dc;
+              text-align: left;
+              font-family: "Noto Sans KR", sans-serif !important;
+          }
+          .notice_wrap .notice_list .notice_cont li p {
+              position: relative;
+              margin: 0;
+              padding-left: 10px;
+              font-weight: 400;
+              text-align: left;
+              font-size: 0.85rem;
+              line-height: 1.2rem;
+              color: #2f84dc;
+              word-break: keep-all;
+              word-wrap: break-word;
+              font-family: "Noto Sans KR", sans-serif !important;
+          }
+          .notice_wrap .notice_list .notice_cont li p:before {
+              position: absolute;
+              left: 0;
+              top: 8px;
+              display: block;
+              content: "";
+              width: 4px;
+              height: 1px;
+              background-color: #2f84dc;
+          }
+
+          @keyframes cursor-blink {
+              0%,
+              100% {
+                  opacity: 1;
+              }
+              50% {
+                  opacity: 0;
+              }
+          }
+      }
+    </style>
+    <div class="jestina-sub-project__wrap">
+      <section class="sect01">
+        <div class="inner">
+          <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/header.jpg" alt="헤더bg" />
+        </div>
+      </section>
+      <section class="sect02">
+        <div class="inner">
+          <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/section01.jpg" alt="섹션01bg" />
+          <div class="gameBoard">
+            <button type="button" id="startBtn">start</button>
+            <span class="icon">
+              <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/icon.png" alt="비행기icon" />
+            </span>
+            <span id="ticket_count">??</span>
+          </div>
+          <!-- popup -->
+          <div id="layerPopup">
+            <div class="content" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0)">
+              <!-- img: pop01.jpg / pop02.jpg / pop03.jpg / pop04.jpg / pop05.jpg / pop06.jpg / pop07.jpg -->
+              <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/pop01.jpg" alt="팝업img" />
+              <button type="button" id="closeBtn"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sect03">
+        <div class="inner">
+          <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/section02.jpg" alt="섹션02bg" />
+        </div>
+      </section>
+      <section class="sect04">
+        <div class="inner">
+          <img src="https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/section03.jpg" alt="섹션03bg" />
+        </div>
+      </section>
+      <!-- notice -->
+      <div class="notice_wrap">
+        <dl class="notice_list">
+          <dt><a href="#" class="close">NOTICE</a></dt>
+          <dd>
+            <ul class="notice_cont">
+              <li>
+                <h2># 늦캉스 이벤트 혜택</h2>
+                <p>본 이벤트 기간 내 이벤트에 참여한 고객에게 확률에 따라 지급되며, 보유한 티켓만큼 참여할 수 있습니다.</p>
+                <p>티켓은 이벤트 기간 출석 시 1장, 앱푸시 수신동의 시 1장, 이벤트 기간 구매 시 주문번호당 1개 2장 지급되며, 이벤트 참여 시마다 1장씩 차감됩니다.</p>
+                <p>모든 경품과 기프티콘, 포인트는 ID당 1회씩만 당첨이 가능하며, 결제후 받은 티겟으로 당첨 후 반품, 취소 시 최종 당첨에서 제외될 수 있습니다.</p>
+                <p>당첨자는 2023. 9. 5(화) Jmall 공지사항을 통해 안내됩니다.</p>
+                <p>본 이벤트는 당사의 사정에 의해 사전 고지 없이 변경 또는 종료될 수 있습니다.</p>
+              </li>
+              <li>
+                <h2># 포인트 혜택</h2>
+                <p>포인트는 당첨 시 즉시 지급되며, 마이페이지 – 포인트에서 내역 확인 가능합니다.</p>
+                <p>포인트는 마지막 구매일로부터 12개월간 미 구매 시 매월 1일 일괄소멸 됩니다.</p>
+              </li>
+              <li>
+                <h2># 기프티콘 혜택</h2>
+                <p>기프티콘은 2023. 9. 5(화) 발송됩니다.</p>
+                <p>당첨된 기프티콘은 고객님의 연락처로 발송 되니, 고객님의 회원 정보를 최신 정보로 업데이트 바라며, 마케팅 수신동의란 체크박스를 꼭 체크 부탁드립니다.<br />(MY PAGE &gt; 회원정보 수정 &gt; 마케팅 수신동의 2항목(SMS/E-Mail) 체크 후 수정완료)</p>
+                <p>회원정보 미입력/오기재 시 경품 당첨 및 지급이 취소 될 수 있습니다.</p>
+              </li>
+              <li>
+                <h2># 비치타올 경품 혜택</h2>
+                <p>비치타올 경품은 2023. 9. 5(화) Jmall 공지사항을 통해 안내됩니다.</p>
+                <p>당첨된 경품은 입력된 주소지로 발송되니 마이페이지 내 회원정보를 최신정보로 업데이트 바랍니다.</p>
+                <p>회원정보 미입력/오기재 시 경품 당첨 및 지급이 취소 될 수 있습니다.</p>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <a name="contentBottom" class="contentBottom"></a>
+    </div>
+    <script>
+      const vacance_8_eventId = "${event.eventId}"; //이벤트 키값
+      // let startEndDT          = getStartEndDT();
+      // let startDate           = startEndDT[0];
+      // let endDate             = startEndDT[1];
+      const ticketCountSpan = document.getElementById("ticket_count"); //비행기 출발 티켓 span
+      const vacance_8_startBtn = document.getElementById("startBtn"); //시작버튼
+      const vacance_8_closeBtn = document.getElementById("closeBtn"); //팝업닫기버튼
+      const ca = /\+/g;
+      //기준값 처리
+      function fnLateVacanceDefault() {
+          let isClick = false;
+
+          return {
+              setDefault: (type, value) => {
+                  if (type === "isClick") {
+                      isClick = value;
+                  }
+              },
+              getDefault: (type) => {
+                  if (type === "isClick") {
+                      return isClick;
+                  }
+              },
+          };
+      }
+      const lateVacanceDefault = fnLateVacanceDefault();
+
+      //[0]문서 시작
+      document.addEventListener("DOMContentLoaded", (event) => {
+          //[0-1]비행기 출발티켓 개수
+          if (!Common.isLogin()) {
+              ticketCountSpan.innerText = "??";
+          } else {
+              $.ajax({
+                  type: "get",
+                  url: Shop.url("/event/getLateVacanceTicketCount"),
+                  dataType: "json",
+                  data: { eventId: vacance_8_eventId },
+                  success: function (response) {
+                      console.log("response.isSuccess: ", response.isSuccess);
+                      if (!response.isSuccess) {
+                          console.log("getLateVacanceTicketCount done error: ", response.errorMessage);
+                          ticketCountSpan.innerText = "??";
+                          return false;
+                      }
+                      let rData = JSON.parse(response.data.replace(ca, " "));
+                      console.log("rData: ", rData);
+                      console.log("getLateVacanceTicketCount > eventTicketCount: ", rData.eventTicketCount);
+                      ticketCountSpan.innerText = rData.eventTicketCount;
+                  },
+                  error: function (data, textStatus, errorThrown) {
+                      console.log("getLateVacanceTicketCount error: ", data);
+                      ticketCountSpan.innerText = "??";
+                  },
+              });
+          }
+      });
+      //[1]경품받기 이벤트(비행기 출발)
+      vacance_8_startBtn.addEventListener("click", async (event) => {
+          //[1-0]중복 클릭
+          if (lateVacanceDefault.getDefault("isClick") === true) {
+              alert("당첨 확인 중입니다.");
+              return false;
+          }
+          //[1-1]로그인 체크
+          if (!Common.isLogin()) {
+              if (confirm("로그인 후 참여 가능합니다.")) {
+                  window.location.href = Shop.url("/users/login?target=/event/pages/vacance_8");
+              }
+              return false;
+          }
+          if (ticketCountSpan.innerText === "??" || ticketCountSpan.innerText === "0") {
+              alert("보유한 티켓이 없습니다.");
+              return false;
+          }
+          //[1-2]경품 받기 로직
+          try {
+              lateVacanceDefault.setDefault("isClick", true); //경품받기 클릭여부
+              //[1-3]로직 결과값 -> 남은 티켓 개수, 당첨경품
+              let response = await startLateVacance(); //경품 뽑기
+              let rData = JSON.parse(response.data.replace(ca, " "));
+              console.log("rData: ", rData);
+              ticketCountSpan.innerText = rData.eventTicketCount; //남은 티켓수
+
+              if (rData.eventTicketResult === "꽝") {
+                  await makePlaneAnimation("N");
+                  alert("꽝입니다. 다시 참여해주세요.");
+                  ticketCountSpan.innerText = rData.eventTicketCount; //남은 티켓수
+                  lateVacanceDefault.setDefault("isClick", false);
+                  return false;
+              } else {
+                  //[1-4]팝업 이미지 변경
+                  let imgFileName = "";
+                  let imgUrl = "https://webimg.jestina.co.kr/UpData/jestina/event/230804_vacance_8/";
+                  if ("1천포인트" === rData.eventTicketResult) {
+                      imgFileName = "m_pop08.jpg";
+                  } else if ("3천포인트" === rData.eventTicketResult) {
+                      imgFileName = "m_pop09.jpg";
+                  } else if ("5천포인트" === rData.eventTicketResult) {
+                      imgFileName = "m_pop10.jpg";
+                  } else if ("7천포인트" === rData.eventTicketResult) {
+                      imgFileName = "m_pop11.jpg";
+                  } else if ("박카스" === rData.eventTicketResult) {
+                      imgFileName = "m_pop01.jpg";
+                  } else if ("베라" === rData.eventTicketResult) {
+                      imgFileName = "m_pop02.jpg";
+                  } else if ("스벅" === rData.eventTicketResult) {
+                      imgFileName = "m_pop04.jpg";
+                  } else if ("올리브영" === rData.eventTicketResult) {
+                      imgFileName = "m_pop05.jpg";
+                  } else if ("왓챠" === rData.eventTicketResult) {
+                      imgFileName = "m_pop06.jpg";
+                  } else if ("비치타올" === rData.eventTicketResult) {
+                      imgFileName = "m_pop03.jpg";
+                  } else {
+                      await makePlaneAnimation("N");
+                      alert("꽝입니다. 다시 참여해주세요.");
+                      ticketCountSpan.innerText = rData.eventTicketCount; //남은 티켓수
+                      lateVacanceDefault.setDefault("isClick", false);
+                      return false;
+                  }
+                  imgUrl += imgFileName;
+                  document.getElementById("layerPopup").querySelector("img").src = imgUrl;
+                  //[1-5]애니메이션 및 당첨레이어팝업 이미지변경
+                  await makePlaneAnimation("Y");
+                  lateVacanceDefault.setDefault("isClick", false);
+              }
+          } catch (e) {
+              console.log("getServiceList - e : ", e);
+              lateVacanceDefault.setDefault("isClick", false);
+              alert("오류가 발생했습니다.\n잠시 후 다시 시도해주세요.");
+              return false;
+          }
+      });
+      //[2]경품확인화면 닫기
+      vacance_8_closeBtn.addEventListener("click", (event) => {
+          $("#layerPopup").fadeOut(function () {
+              $("body").css("overflow", "auto");
+              $(".icon").css({ top: "-7%", left: "3%", opacity: "1" });
+              $(".m_icon").css({ top: "-7%", left: "3%", opacity: "1" });
+          });
+      });
+      //[3]경품 받기 로직
+      function startLateVacance() {
+          return new Promise((resolve, reject) => {
+              let param = { eventId: vacance_8_eventId };
+              $.post(Shop.url("/event/useLateVacanceTicket"), param, function (response) {
+                  if (!response.isSuccess) {
+                      reject(response);
+                  }
+                  resolve(response);
+              }).fail((xhr, textStatus, errorThrown) => {
+                  reject(textStatus);
+              });
+          });
+      }
+      //[4]애니메이션 처리
+      function makePlaneAnimation(hasReward) {
+          return new Promise((resolve, reject) => {
+              const m_icon = $(".m_icon"); //mo
+              m_icon.animate({ left: "83%" }, 160);
+              m_icon.animate({ top: "93%" }, 210);
+              m_icon.animate({ left: "3%" }, 260);
+              m_icon.animate({ top: "-7%" }, 320);
+              m_icon.animate({ left: "83%" }, 400);
+              m_icon.animate({ top: "93%" }, 470);
+              m_icon.animate({ left: "-3%", opacity: 0.5 }, 570);
+              m_icon.animate({ top: "-7%", opacity: 0 }, 640, function () {
+                  //당첨
+                  if ("Y" === hasReward) {
+                      $("#layerPopup").fadeIn(function () {
+                          $("body").css("overflow", "hidden");
+                          resolve("success");
+                      });
+                  } else {
+                      resolve("success");
+                  }
+              });
+          });
+      }
+    </script>
+  </body>
+</html>
