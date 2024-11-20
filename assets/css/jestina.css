@@ -518,7 +518,7 @@ main {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: url(../assets/images/jestina/watch/btn.png) no-repeat;
+    background: url(../../assets/images/jestina/watch/btn.png) no-repeat;
     background-size: 100% 100%;
     border-radius: 20px;
 }
@@ -626,6 +626,10 @@ main {
 .womensWatch .sec02 .swiper-pagination-bullet-active {
     background: #ffffff !important;
 }
+
+/* 
+* IU Magazine
+*/
 
 /* 
 * common

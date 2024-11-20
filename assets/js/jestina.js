@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     featured__siwperGif2();
     watch_mainSwiper(); // 240613_여성시계기획전
     m_watch_item_swiper();
+    black_collection_scroll01(); //231002_black_collection
+    black_collection_scroll02();
 });
 
 function noticeWrap() {
@@ -126,4 +128,28 @@ function m_watch_item_swiper() {
         observer: true,
         observeParents: true,
     });
+}
+
+/*
+ * 아이유 매거진
+ */
+
+function black_collection_scroll01() {
+    var tl = new TimelineMax();
+    tl.fromTo(".tlt01", 0.7, { opacity: 0, x: -300 }, { opacity: 1, x: 0 });
+
+    scrollMotion01(tl, ".tlt01", -50);
+}
+function scrollMotion01(tl, obj, off) {
+    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 }).setTween(tl).reverse(true).addTo(controller);
+}
+
+function black_collection_scroll02() {
+    var tl = new TimelineMax();
+    tl.fromTo(".tlt02", 0.7, { opacity: 0, x: 300 }, { opacity: 1, x: 0 });
+
+    scrollMotion02(tl, ".tlt02", -50);
+}
+function scrollMotion02(tl, obj, off) {
+    var scene = new ScrollMagic.Scene({ triggerElement: obj, offset: -200 }).setTween(tl).reverse(true).addTo(controller);
 }

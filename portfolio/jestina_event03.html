@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" sec0ent="IE=edge" />
+        <meta name="viewport" sec0ent="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/jestina.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../assets/css/default/animate.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+        <script src="../assets/js/jestina.js"></script>
+        <script src="../assets/js/swiper.js"></script>
+    </head>
+    <body class="IU-Magazine">
+        <style>
+            .IU-Magazine .tlt {
+                animation: fadeIn ease-in 1s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+            }
+            .IU-Magazine .tlt img {
+                width: 100%;
+            }
+            .IU-Magazine .tlt01 {
+                position: absolute;
+                top: 28%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 342px;
+            }
+            .IU-Magazine .tlt02 {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translateX(-50%);
+                animation-delay: 0.8s;
+            }
+            .IU-Magazine .tlt03 {
+                position: absolute;
+                top: 40.5%;
+                left: 64.5%;
+                animation-delay: 1.5s;
+            }
+            .IU-Magazine .rotate {
+                position: absolute;
+                right: 1.5%;
+                top: 10.5%;
+                animation-duration: 10s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+                animation-name: rotate_txt;
+            }
+            .IU-Magazine .sec03 .rolling {
+                position: absolute;
+                top: 0%;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                animation: textSlide 60s linear 0s infinite;
+                background-image: url(../assets/images/jestina/iu_magazine/rolling02.png);
+                background-repeat: repeat-x;
+                background-position: 0 0%;
+            }
+
+            .IU-Magazine .event .rolling {
+                position: absolute;
+                top: 0%;
+                left: 0;
+                width: 100%;
+                height: 13px;
+                animation: textSlide 60s linear 0s infinite;
+                background-image: url(../assets/images/jestina/iu_magazine/rolling02.png);
+                background-repeat: repeat-x;
+                background-position: 0 0%;
+            }
+            .IU-Magazine .event a {
+                position: absolute;
+                bottom: 30%;
+                right: 22%;
+                width: 30%;
+                height: 10%;
+            }
+            .IU-Magazine .event a .icon {
+                position: absolute;
+                right: 13%;
+                top: 38%;
+            }
+
+            .IU-Magazine .sec03 .featured-link__wrap {
+                position: absolute;
+                bottom: 6%;
+                left: 0;
+                width: 100%;
+                height: 80%;
+            }
+            .IU-Magazine .sec03 .featured-link__list {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .IU-Magazine .sec03 .featured-link__item {
+                position: absolute;
+                width: 45%;
+                height: 19%;
+                right: 4%;
+                top: 6%;
+            }
+            .IU-Magazine .sec03 .featured-link__item:nth-child(2) {
+                position: absolute;
+                width: 45%;
+                height: 19%;
+                left: 4%;
+                top: 40%;
+            }
+            .IU-Magazine .sec03 .featured-link__item:nth-child(3) {
+                position: absolute;
+                width: 45%;
+                height: 19%;
+                right: 0%;
+                top: 81%;
+            }
+            .IU-Magazine .sec03 .featured-link__item:nth-child(1) .icon {
+                position: absolute;
+                right: 20%;
+                top: 46%;
+            }
+            .IU-Magazine .sec03 .featured-link__item:nth-child(2) .icon {
+                position: absolute;
+                right: 46%;
+                top: 54%;
+            }
+            .IU-Magazine .sec03 .featured-link__item:nth-child(3) .icon {
+                position: absolute;
+                right: 50%;
+                top: 90%;
+            }
+            .IU-Magazine .sec03 .featured-link__item a {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .IU-Magazine .featured-link__item .icon {
+                animation-duration: 1.5s;
+            }
+
+            .IU-Magazine .sec04 .featured-link__wrap {
+                position: absolute;
+                bottom: 6%;
+                left: 0;
+                width: 100%;
+                height: 63%;
+            }
+            .IU-Magazine .sec04 .featured-link__list {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .IU-Magazine .sec04 .featured-link__item {
+                position: absolute;
+                width: 36%;
+                height: 37%;
+                right: 12%;
+                top: 24%;
+            }
+            .IU-Magazine .sec04 .featured-link__item:nth-child(2) {
+                position: absolute;
+                width: 36%;
+                height: 37%;
+                right: 12%;
+                top: 63%;
+            }
+            .IU-Magazine .sec04 .featured-link__item a {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .IU-Magazine .sec04 .featured-link__item:nth-child(1) .icon {
+                position: absolute;
+                top: 80%;
+                left: 24%;
+            }
+            .IU-Magazine .sec04 .featured-link__item:nth-child(2) .icon {
+                position: absolute;
+                top: 68%;
+                left: 33%;
+            }
+
+            .IU-Magazine .sec05 .featured-link__wrap {
+                position: absolute;
+                bottom: 13%;
+                left: 0;
+                width: 100%;
+                height: 63%;
+            }
+            .IU-Magazine .sec05 .featured-link__list {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .IU-Magazine .sec05 .featured-link__item {
+                position: absolute;
+                width: 39%;
+                height: 31%;
+                left: 8%;
+                top: 1%;
+            }
+            .IU-Magazine .sec05 .featured-link__item:nth-child(2) {
+                position: absolute;
+                width: 39%;
+                height: 31%;
+                left: 58%;
+                top: 67%;
+            }
+            .IU-Magazine .sec05 .featured-link__item a {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .IU-Magazine .sec05 .featured-link__item:nth-child(1) .icon {
+                position: absolute;
+                top: 60%;
+                left: 86%;
+            }
+            .IU-Magazine .sec05 .featured-link__item:nth-child(2) .icon {
+                position: absolute;
+                top: 35%;
+                left: 54%;
+            }
+            .IU-Magazine .sec05 .rolling {
+                position: absolute;
+                bottom: 0%;
+                left: 0;
+                width: 100%;
+                height: 13px;
+                animation: textSlide 60s linear 0s infinite;
+                background-image: url(../assets/images/jestina/iu_magazine/rolling02.png);
+                background-repeat: repeat-x;
+                background-position: 0 0%;
+            }
+
+            .IU-Magazine .sec06 .featured-link__wrap {
+                position: absolute;
+                bottom: 12%;
+                left: 0;
+                width: 100%;
+                height: 49%;
+            }
+            .IU-Magazine .sec06 .featured-link__list {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .IU-Magazine .sec06 .featured-link__item {
+                position: absolute;
+                width: 45%;
+                height: 7%;
+                left: 49%;
+                top: 85%;
+            }
+            .IU-Magazine .sec06 .featured-link__item a {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .IU-Magazine .sec06 .featured-link__item:nth-child(2) {
+                position: absolute;
+                width: 39%;
+                height: 7%;
+                left: 53%;
+                top: 93%;
+            }
+            .IU-Magazine .sec06 .featured-link__item:nth-child(3) {
+                position: absolute;
+                width: 39%;
+                height: 30%;
+                left: 53%;
+                top: 15%;
+            }
+            .IU-Magazine .sec06 .featured-link__item:nth-child(4) {
+                position: absolute;
+                width: 39%;
+                height: 30%;
+                left: 53%;
+                top: 45%;
+            }
+            .IU-Magazine .sec06 .featured-link__item:nth-child(1) .icon {
+                position: absolute;
+                top: 48%;
+                right: 5%;
+            }
+            .IU-Magazine .sec06 .featured-link__item:nth-child(2) .icon {
+                position: absolute;
+                top: 30%;
+                right: 14%;
+            }
+
+            .IU-Magazine .sec07 .featured-link__wrap {
+                position: absolute;
+                bottom: 6%;
+                left: 0;
+                width: 100%;
+                height: 63%;
+            }
+            .IU-Magazine .sec07 .featured-link__list {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .IU-Magazine .sec07 .featured-link__item {
+                position: absolute;
+                width: 36%;
+                height: 29%;
+                right: 11%;
+                top: 0%;
+            }
+            .IU-Magazine .sec07 .featured-link__item:nth-child(2) {
+                position: absolute;
+                width: 36%;
+                height: 29%;
+                right: 54%;
+                top: 52%;
+            }
+            .IU-Magazine .sec07 .featured-link__item a {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .IU-Magazine .sec07 .featured-link__item:nth-child(1) .icon {
+                position: absolute;
+                top: 88%;
+                left: 31%;
+            }
+            .IU-Magazine .sec07 .featured-link__item:nth-child(2) .icon {
+                position: absolute;
+                top: 87%;
+                left: 43%;
+            }
+
+            .IU-Magazine .videoArea {
+                position: absolute;
+                top: 18.5%;
+                left: 51.8%;
+                width: 40.5%;
+                height: 59.3%;
+                z-index: 1;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @keyframes rotate_txt {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+            @keyframes textSlide {
+                0% {
+                    background-position-x: 1000%;
+                }
+                100% {
+                    background-position-x: 0%;
+                }
+            }
+            @media (max-width: 768px) {
+                .IU-Magazine .videoArea {
+                    position: absolute;
+                    top: 26.5%;
+                    left: 50.5%;
+                    transform: translateX(-50%);
+                    width: 77.7%;
+                    /* height: 50.3%; */
+                    z-index: 1;
+                }
+            }
+        </style>
+        <main class="featured_wrap">
+            <section class="featured_sec">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/sec_main.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_sec_main.jpg" />
+                <div class="tlt01 tlt">
+                    <img class="animate__animated animate__fadeIn" src="../assets/images/jestina/iu_magazine/tlt01.png" />
+                </div>
+                <div class="tlt02 tlt">
+                    <img class="animate__animated animate__fadeIn" src="../assets/images/jestina/iu_magazine/tlt02.png" />
+                </div>
+                <div class="tlt03 tlt">
+                    <img class="animate__animated animate__fadeIn" src="../assets/images/jestina/iu_magazine/tlt03.png" />
+                </div>
+            </section>
+            <section class="featured_sec sec01">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section01.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section01.jpg" />
+            </section>
+            <section class="featured_sec sec02">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section02.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section02.jpg" />
+                <div class="rotate">
+                    <img class="animate__animated animate__fadeIn" src="../assets/images/jestina/iu_magazine/rolling01.png" />
+                </div>
+                <div class="videoArea">
+                    <video width="100%" sec0rols="" autoplay="" muted="">
+                        <source src="https://webimg.jestina.co.kr/UpData/jestina/productDetail/video/iu_magazine.mp4?rel=0" type="video/mp4" />
+                    </video>
+                </div>
+            </section>
+            <section class="featured_sec event">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/event-end.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_event-end.jpg" />
+                <div class="rolling"></div>
+                <a href="https://www.jestina.co.kr/pages/23_U#link0"> </a>
+            </section>
+            <section class="featured_sec sec03">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section03.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section03.jpg" />
+                <div class="rolling"></div>
+                <div class="featured-link__wrap">
+                    <ul class="featured-link__list">
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="featured_sec sec04">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section04.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section04.jpg" />
+                <div class="featured-link__wrap">
+                    <ul class="featured-link__list">
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="featured_sec sec05">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section05.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section05.jpg" />
+                <div class="featured-link__wrap">
+                    <ul class="featured-link__list">
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rolling"></div>
+            </section>
+            <section class="featured_sec sec06">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section06.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section06.jpg" />
+                <div class="featured-link__wrap">
+                    <ul class="featured-link__list">
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="featured_sec sec07">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section07.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section07.jpg" />
+                <div class="featured-link__wrap">
+                    <ul class="featured-link__list">
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                        <li class="featured-link__item">
+                            <a class="featured-link" href="javascript:void(0)">
+                                <img class="icon animate__animated animate__fadeOutRight animate__infinite" src="../assets/images/jestina/iu_magazine/icon.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="featured_sec sec08">
+                <img class="pc w100" src="../assets/images/jestina/iu_magazine/section08.jpg" />
+                <img class="mo w100" src="../assets/images/jestina/iu_magazine/m_section08.jpg" />
+            </section>
+        </main>
+        <a name="contentBottom" class="contentBottom"></a>
+
+        <script></script>
+    </body>
+</html>
