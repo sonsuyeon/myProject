@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" sec0ent="IE=edge" />
+        <meta name="viewport" sec0ent="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/jestina.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="../assets/css/default/animate.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+        <script src="../assets/js/jestina.js"></script>
+        <script src="../assets/js/swiper.js"></script>
+    </head>
+    <body class="poche">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+            main {
+                width: 100%;
+                max-width: 1140px;
+            }
+            section {
+                position: relative;
+                width: 100%;
+
+                margin: 0 auto;
+                text-align: center;
+            }
+            section .inner {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            /* cont_top */
+            .poche .cursor_blink {
+                position: absolute;
+                top: 10%;
+                right: 30.5%;
+                animation: cursor 1s steps(1) infinite;
+                opacity: 0;
+            }
+            .poche .cursor_blink img {
+                width: 100%;
+            }
+            /* 상품 미선택 시 gif */
+            .poche .cont_top .imgWrap {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 519px;
+            }
+            .poche .cont_top .imgWrap img.first {
+                animation-delay: 7s;
+                animation-timing-function: ease-in-out;
+            }
+            .poche .cont_top .imgWrap img.second {
+                animation-delay: 5s;
+                animation-timing-function: ease-in-out;
+            }
+            .poche .cont_top .imgWrap img.third {
+                animation-delay: 3s;
+                animation-timing-function: ease-in-out;
+            }
+            .poche .cont_top .imgWrap img.fourth {
+                animation-delay: 0s;
+                animation-timing-function: ease-in-out;
+            }
+            .poche .cont_top .imgWrap img {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%; /* transform: translate(-50%); */
+                animation-name: poche;
+                animation-duration: 11s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+            /* 선택 result */
+            #result_box {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 519px;
+            }
+            #result_box img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            /* 체크부분 */
+            .poche .select_box {
+                position: absolute;
+                top: 7%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 78%;
+                height: 57%;
+            }
+            .poche .select_box ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+            }
+            .poche .select_box ul li {
+                width: 100%;
+                height: 100%;
+            }
+            .poche .select_box .check {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+            .poche .select_box .check input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .poche .check input + label {
+                padding-left: 0 !important;
+            }
+            .poche .select_box .check input[type="radio"]:checked + label {
+                position: absolute;
+                left: 51%;
+                transform: translate(-50%);
+                bottom: 11%;
+                width: 17%;
+                height: 19%;
+                background: url(../assets/images/jestina/poche/check_icon.png) no-repeat;
+                background-position: center center;
+                background-size: 100% auto;
+                padding: 0;
+                margin: 0;
+            }
+            #complete_btn {
+                position: absolute;
+                bottom: 16%;
+                left: 50%;
+                transform: translate(-50%);
+                background-color: transparent;
+                width: 39%;
+                height: 15%;
+                font-size: 0 !important;
+                border: none;
+                cursor: pointer;
+            }
+            #jestina_renewal input:read-only {
+                background-color: transparent !important;
+            }
+            /* 팝업 */
+            .poche .layerPop {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                padding: 20px;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.5);
+            }
+            .poche .layerPop > .content {
+                display: inline-block;
+                position: relative;
+                top: 15%;
+                overflow: hidden;
+                background: transparent;
+                transform: translate(0, -50%);
+                -webkit-transform: translate(0, -50%);
+                -moz-transform: translate(0, -50%);
+            }
+            .poche .layerPop > .content img {
+                width: 100% !important;
+            }
+            .poche .layerPop > .content button {
+                position: absolute;
+                top: 0;
+                right: 2%;
+                width: 28%;
+                height: 16%;
+                font: 0/0 a;
+                border: none;
+                outline: none;
+                background: none;
+                cursor: pointer;
+            }
+
+            /* notice */
+            .poche .notice_wrap {
+                position: relative;
+                width: 100%;
+                background-color: #dfdcf5;
+                border-top: 1px solid #7c72c7;
+            }
+            .poche .notice_list {
+                margin: 0;
+            }
+            .poche .notice_wrap .notice_list dt {
+                text-align: center;
+                height: 60px;
+                line-height: 60px;
+            }
+            .poche .notice_wrap .notice_list dt a {
+                position: relative;
+                display: block;
+                box-sizing: border-box;
+                color: #6a5fb8;
+                font-size: 18px;
+                text-decoration: none;
+                transition: all 0.25s;
+                font-family: "Roboto", sans-serif !important;
+                font-weight: 400;
+            }
+            .poche .notice_wrap .notice_list dt a::after {
+                display: inline-block;
+                vertical-align: middle;
+                content: "";
+                margin: -8px 0 0 8px;
+                border: solid #6a5fb8;
+                border-width: 0 1px 1px 0;
+                padding: 4px;
+                transform: rotate(45deg);
+                transition: all 0.25s;
+            }
+            .poche .notice_wrap .notice_list dd {
+                padding: 30px 0 56px;
+                margin: 0 20px;
+                display: none;
+            }
+            .poche .notice_wrap .notice_list .open {
+                background: transparent;
+            }
+            .poche .notice_wrap .notice_list .open::after {
+                margin-top: 3px;
+                transform: rotate(-135deg);
+            }
+            .poche .notice_wrap .notice_list .notice_cont {
+                margin: 0 auto;
+                padding-left: 0;
+                width: 83%;
+                max-width: 100%;
+            }
+            .poche .notice_wrap .notice_list .notice_cont li {
+                list-style-type: none;
+            }
+            .poche .notice_wrap .notice_list .notice_cont li + li {
+                margin-top: 0.5rem;
+            }
+            .poche .notice_wrap .notice_list .notice_cont li h2 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 40px;
+                color: #6a5fb8;
+                text-align: left;
+                font-family: "Noto Sans KR", sans-serif !important;
+            }
+            .poche .notice_wrap .notice_list .notice_cont li p {
+                position: relative;
+                margin: 0;
+                padding-left: 10px;
+                font-weight: 300;
+                text-align: left;
+                font-size: 20px;
+                line-height: 28px;
+                color: #6a5fb8;
+                word-break: keep-all;
+                word-wrap: break-word;
+                font-family: "Noto Sans KR", sans-serif !important;
+            }
+            .poche .notice_wrap .notice_list .notice_cont li p:before {
+                display: inline-block;
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 14px;
+                width: 5px;
+                height: 1px;
+                background-color: #6a5fb8;
+            }
+
+            @keyframes cursor {
+                50% {
+                    opacity: 1;
+                }
+            }
+            @keyframes poche {
+                0% {
+                    opacity: 1;
+                }
+                17% {
+                    opacity: 1;
+                }
+                25% {
+                    opacity: 0;
+                }
+                80% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 768px) {
+                @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+                @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+                body,
+                html,
+                * {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
+                .poche .jestina-sub-project__wrap {
+                    width: 100%;
+                    max-width: 960px;
+                    min-width: 280px;
+                    margin: 0 auto;
+                }
+                .poche .jestina-sub-project__wrap section {
+                    position: relative;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                section .inner {
+                    width: 100%;
+                    height: auto;
+                }
+                .poche .w100 {
+                    width: 100%;
+                    vertical-align: middle;
+                }
+                .poche .contentBottom {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                }
+
+                /* cont_top */
+                .poche .cursor_blink {
+                    position: absolute;
+                    top: 14%;
+                    right: 16%;
+                    width: 5.5%;
+                    height: auto;
+                    animation: cursor 1s steps(1) infinite;
+                    opacity: 0;
+                }
+                .poche .cursor_blink img {
+                    width: 100%;
+                }
+                /* 상품 미선택 시 gif */
+                .poche .cont_top .imgWrap {
+                    position: absolute;
+                    bottom: -0.5%;
+                    left: 0;
+                    width: 100%;
+                    height: 57%;
+                }
+                .poche .cont_top .imgWrap img.first {
+                    animation-delay: 7s;
+                    animation-timing-function: ease-in-out;
+                }
+                .poche .cont_top .imgWrap img.second {
+                    animation-delay: 5s;
+                    animation-timing-function: ease-in-out;
+                }
+                .poche .cont_top .imgWrap img.third {
+                    animation-delay: 3s;
+                    animation-timing-function: ease-in-out;
+                }
+                .poche .cont_top .imgWrap img.fourth {
+                    animation-delay: 0s;
+                    animation-timing-function: ease-in-out;
+                }
+                .poche .cont_top .imgWrap img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* transform: translate(-50%); */
+                    animation-name: poche;
+                    animation-duration: 11s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-in-out;
+                }
+                /* 선택 result */
+                #result_box {
+                    position: absolute;
+                    bottom: -0.5%;
+                    left: 0;
+                    width: 100%;
+                    height: 57%;
+                }
+                #result_box img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                }
+                /* 체크부분 */
+                .poche .select_box {
+                    position: absolute;
+                    top: 3%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                    height: 72%;
+                }
+                .poche .select_box ul {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .poche .select_box ul li {
+                    width: 50%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    align-content: space-around;
+                    justify-content: space-between;
+                    box-sizing: border-box;
+                }
+                .poche .select_box .check {
+                    display: inline-block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+                .poche .select_box .check input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    z-index: 1;
+                }
+                .poche .select_box .check input[type="radio"]:checked + label {
+                    position: absolute;
+                    left: 7%;
+                    top: 0%;
+                    width: 17%;
+                    height: 19%;
+                    background: url(../assets/images/jestina/poche/m_check_icon.png) no-repeat;
+                    background-position: center center;
+                    background-size: 100% auto;
+                    padding: 0;
+                    margin: 0;
+                }
+                #complete_btn {
+                    position: absolute;
+                    bottom: 13%;
+                    left: 50%;
+                    transform: translate(-50%);
+                    background-color: transparent;
+                    width: 77%;
+                    height: 11%;
+                    font-size: 0 !important;
+                    border: none;
+                }
+                #jestina_renewal input:read-only {
+                    background-color: transparent !important;
+                }
+                /* 팝업 */
+                .poche .layerPop {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden;
+                    padding: 20px;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10000;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+                .poche .layerPop > .content {
+                    display: inline-block;
+                    position: relative;
+                    top: 15%;
+                    overflow: hidden;
+                    background: transparent;
+                    transform: translate(0, -50%);
+                    -webkit-transform: translate(0, -50%);
+                    -moz-transform: translate(0, -50%);
+                }
+                .poche .layerPop > .content img {
+                    width: 85% !important;
+                }
+                .poche .layerPop > .content button {
+                    position: absolute;
+                    top: 0;
+                    right: 2%;
+                    width: 28%;
+                    height: 16%;
+                    font: 0/0 a;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                }
+
+                /* notice */
+                .poche .notice_wrap {
+                    width: 100%;
+                    background-color: #dfdcf5;
+                    border-top: 1px solid #7c72c7;
+                }
+                .poche .notice_wrap .notice_list dt {
+                    text-align: center;
+                    padding: 0.5rem 0;
+                }
+                .poche .notice_wrap .notice_list dt a {
+                    position: relative;
+                    display: block;
+                    box-sizing: border-box;
+                    color: #6a5fb8;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    transition: all 0.25s;
+                    padding: 1rem 0 !important;
+                    font-family: "Roboto", sans-serif !important;
+                    font-weight: 400;
+                }
+                .poche .notice_wrap .notice_list dt a::after {
+                    display: inline-block;
+                    content: "";
+                    margin: -6px 0 0 6px;
+                    padding: 2.5px;
+                    vertical-align: middle;
+                    border: solid #6a5fb8;
+                    border-width: 0 1px 1px 0;
+                    transform: rotate(45deg);
+                    transition: all 0.25s;
+                }
+                .poche .notice_wrap .notice_list dd {
+                    display: none;
+                    padding: 8px 0 33px;
+                }
+                .poche .notice_wrap .notice_list .open {
+                    background: transparent;
+                }
+                .poche .notice_wrap .notice_list .open::after {
+                    margin-top: 3px;
+                    transform: rotate(-135deg);
+                }
+                .poche .notice_wrap .notice_list .notice_cont {
+                    max-width: 100%;
+                    margin: 0 auto;
+                    width: 80%;
+                }
+                .poche .notice_wrap .notice_list .notice_cont li {
+                    list-style: none;
+                }
+                .poche .notice_wrap .notice_list .notice_cont li + li {
+                    margin-top: 0.8rem;
+                }
+                .poche .notice_wrap .notice_list .notice_cont li h2 {
+                    margin: 0;
+                    font-size: 0.93rem;
+                    font-weight: 600;
+                    line-height: 1.9rem;
+                    color: #6a5fb8;
+                    text-align: left;
+                    font-family: "Noto Sans KR", sans-serif !important;
+                }
+                .poche .notice_wrap .notice_list .notice_cont li p {
+                    position: relative;
+                    margin: 0;
+                    padding-left: 10px;
+                    font-weight: 400;
+                    text-align: left;
+                    font-size: 0.85rem;
+                    line-height: 1.2rem;
+                    color: #6a5fb8;
+                    word-break: keep-all;
+                    word-wrap: break-word;
+                    font-family: "Noto Sans KR", sans-serif !important;
+                }
+                .poche .notice_wrap .notice_list .notice_cont li p:before {
+                    position: absolute;
+                    left: 0;
+                    top: 8px;
+                    display: block;
+                    content: "";
+                    width: 4px;
+                    height: 1px;
+                    background-color: #6a5fb8;
+                }
+
+                @keyframes cursor {
+                    50% {
+                        opacity: 1;
+                    }
+                }
+                @keyframes poche {
+                    0% {
+                        opacity: 1;
+                    }
+                    17% {
+                        opacity: 1;
+                    }
+                    25% {
+                        opacity: 0;
+                    }
+                    80% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+        </style>
+
+        <main class="">
+            <section class="event_sec cont_top">
+                <div class="inner">
+                    <img class="pc w100" src="../assets/images/jestina/poche/header.jpg" alt="헤더bg" />
+                    <img class="mo" src="../assets/images/jestina/poche/m_header.jpg" alt="헤더bg" />
+                    <div class="cursor_blink">
+                        <img class="pc" src="../assets/images/jestina/poche/arrow.png" alt="커서icon" />
+                        <img class="mo" src="../assets/images/jestina/poche/m_arrow.png" alt="커서icon" />
+                    </div>
+                    <!--상품 미선택 시 gif-->
+                    <div class="imgWrap">
+                        <img class="pc first" src="../assets/images/jestina/poche/slide01_pc.jpg" alt="gif이미지1" />
+                        <img class="pc second" src="../assets/images/jestina/poche/slide02_pc.jpg" alt="gif이미지2" />
+                        <img class="pc third" src="../assets/images/jestina/poche/slide03_pc.jpg" alt="gif이미지3" />
+                        <img class="pc fourth" src="../assets/images/jestina/poche/slide04_pc.jpg" alt="gif이미지4" />
+                        <img class="mo first" src="../assets/images/jestina/poche/slide01.jpg" alt="gif이미지1" />
+                        <img class="mo second" src="../assets/images/jestina/poche/slide02.jpg" alt="gif이미지2" />
+                        <img class="mo third" src="../assets/images/jestina/poche/slide03.jpg" alt="gif이미지3" />
+                        <img class="mo fourth" src="../assets/images/jestina/poche/slide04.jpg" alt="gif이미지4" />
+                    </div>
+                    <!--선택 result-->
+                    <div id="result_box" style="display: none">
+                        <img class="pc select01" src="../assets/images/jestina/poche/slide01_pc.jpg" alt="선택이미지1" />
+                        <img class="pc select02" src="../assets/images/jestina/poche/slide02_pc.jpg" alt="선택이미지2" />
+                        <img class="pc select03" src="../assets/images/jestina/poche/slide03_pc.jpg" alt="선택이미지3" />
+                        <img class="pc select04" src="../assets/images/jestina/poche/slide04_pc.jpg" alt="선택이미지4" />
+                        <img class="mo select01" src="../assets/images/jestina/poche/slide01.jpg" alt="선택이미지1" />
+                        <img class="mo select02" src="../assets/images/jestina/poche/slide02.jpg" alt="선택이미지2" />
+                        <img class="mo select03" src="../assets/images/jestina/poche/slide03.jpg" alt="선택이미지3" />
+                        <img class="mo select04" src="../assets/images/jestina/poche/slide04.jpg" alt="선택이미지4" />
+                    </div>
+                </div>
+            </section>
+            <section class="event_sec event01">
+                <div class="inner">
+                    <img class="pc" src="../assets/images/jestina/poche/section01.jpg" alt="섹션1bg" />
+                    <img class="mo" src="../assets/images/jestina/poche/m_section01.jpg" alt="섹션1bg" />
+                    <!-- 체크부분 -->
+                    <div class="select_box">
+                        <ul>
+                            <li>
+                                <span class="check first">
+                                    <input type="radio" name="select" value="1" id="red1" />
+                                    <label for="red"></label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="check second">
+                                    <input type="radio" name="select" value="2" id="red2" />
+                                    <label for="red"></label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="check third">
+                                    <input type="radio" name="select" value="3" id="red3" />
+                                    <label for="red"></label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="check fourth">
+                                    <input type="radio" name="select" value="4" id="red4" />
+                                    <label for="red"></label>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--선택완료버튼-->
+                    <input type="submit" id="complete_btn" />
+                    <!-- 팝업 -->
+                    <div class="layerPop modal1" style="">
+                        <div class="content" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0)">
+                            <img src="../assets/images/jestina/poche/popup.png" />
+                            <button type="button" onclick="fn_layer_close(this)">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="event_sec event02">
+                <div class="inner">
+                    <img class="pc" src="../assets/images/jestina/poche/section02.jpg" alt="섹션2bg" />
+                    <img class="mo" src="../assets/images/jestina/poche/m_section02.jpg" alt="섹션2bg" />
+                </div>
+            </section>
+            <div class="notice_wrap">
+                <dl class="notice_list">
+                    <dt><a href="#" class="close">NOTICE</a></dt>
+                    <dd>
+                        <ul class="notice_cont">
+                            <li>
+                                <h2>더블 5% 쿠폰</h2>
+                                <p>본 쿠폰은 이벤트에 참여하여 정답을 맞춘 고객에 한 해 자동 지급 되며, 마이페이지 쿠폰관리에서 확인 가능합니다.</p>
+                                <p>본 더블 쿠폰은 발행일로부터 23. 08 .31까지 사용 가능하며, ID당 1회 다운로드 가능합니다.</p>
+                                <p>사용한 쿠폰은 취소, 반품 시 재발행 되지 않으며 유효기간 내 미 사용 시 자동 소멸됩니다.</p>
+                                <p>본 더블 쿠폰은 7만원 이상 구매 시 사용 가능하며, 일부 상품의 경우 쿠폰 적용이 불가 할 수 있습니다.</p>
+                                <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
+                            </li>
+                            <li>
+                                <h2>‘POCHE 카드탑지퍼 LS’ 경품 증정</h2>
+                                <p>본 경품은 이벤트 기간 내 취향 존중 쿠폰을 사용한 고객에 한 해 추첨 1명 지급됩니다.</p>
+                                <p>당첨자는 2023. 9. 13(수) Jmall 공지사항을 통해 발표됩니다.</p>
+                                <p>본 경품의 제세공과금 22%는 제이에스티나에서 부담합니다.</p>
+                                <p>당첨된 경품은 입력된 주소지로 발송되니 마이페이지 내 회원정보를 최신정보로 업데이트 바랍니다.</p>
+                                <p>회원정보 미입력/오기재 시 경품 당첨 및 지급이 취소 될 수 있습니다.</p>
+                                <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <a name="contentBottom" class="contentBottom"></a>
+        </main>
+        <script>
+            $(document).ready(function () {
+                $(".first").on("click", function () {
+                    $("#result_box").css("display", "block");
+                    $(".select01").css("display", "block");
+                    $(".select02").css("display", "none");
+                    $(".select03").css("display", "none");
+                    $(".select04").css("display", "none");
+                });
+                $(".second").on("click", function () {
+                    $("#result_box").css("display", "block");
+                    $(".select01").css("display", "none");
+                    $(".select02").css("display", "block");
+                    $(".select03").css("display", "none");
+                    $(".select04").css("display", "none");
+                });
+                $(".third").on("click", function () {
+                    $("#result_box").css("display", "block");
+                    $(".select01").css("display", "none");
+                    $(".select02").css("display", "none");
+                    $(".select03").css("display", "block");
+                    $(".select04").css("display", "none");
+                });
+                $(".fourth").on("click", function () {
+                    $("#result_box").css("display", "block");
+                    $(".select01").css("display", "none");
+                    $(".select02").css("display", "none");
+                    $(".select03").css("display", "none");
+                    $(".select04").css("display", "block");
+                });
+            });
+        </script>
+    </body>
+</html>
