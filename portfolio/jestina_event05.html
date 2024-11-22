@@ -88,7 +88,7 @@
             /* 선택 result */
             #result_box {
                 position: absolute;
-                bottom: -1px;
+                bottom: -10px;
                 left: 0;
                 width: 100%;
                 height: 519px;
@@ -98,6 +98,9 @@
                 left: 0;
                 top: 0;
                 width: 100%;
+            }
+            #result_box .mo {
+                display: none !important;
             }
             /* 체크부분 */
             .poche .select_box {
@@ -418,6 +421,12 @@
                     top: 0;
                     width: 100%;
                 }
+                #result_box .pc {
+                    display: none !important;
+                }
+                #result_box .mo {
+                    display: initial !important;
+                }
                 /* 체크부분 */
                 .poche .select_box {
                     position: absolute;
@@ -461,7 +470,7 @@
                 }
                 .poche .select_box .check input[type="radio"]:checked + label {
                     position: absolute;
-                    left: 7%;
+                    left: 15%;
                     top: 0%;
                     width: 17%;
                     height: 19%;
@@ -721,32 +730,30 @@
                     <img class="mo" src="../assets/images/jestina/poche/m_section02.jpg" alt="섹션2bg" />
                 </div>
             </section>
-            <div class="notice_wrap">
-                <dl class="notice_list">
-                    <dt><a href="#" class="close">NOTICE</a></dt>
-                    <dd>
-                        <ul class="notice_cont">
-                            <li>
-                                <h2>더블 5% 쿠폰</h2>
-                                <p>본 쿠폰은 이벤트에 참여하여 정답을 맞춘 고객에 한 해 자동 지급 되며, 마이페이지 쿠폰관리에서 확인 가능합니다.</p>
-                                <p>본 더블 쿠폰은 발행일로부터 23. 08 .31까지 사용 가능하며, ID당 1회 다운로드 가능합니다.</p>
-                                <p>사용한 쿠폰은 취소, 반품 시 재발행 되지 않으며 유효기간 내 미 사용 시 자동 소멸됩니다.</p>
-                                <p>본 더블 쿠폰은 7만원 이상 구매 시 사용 가능하며, 일부 상품의 경우 쿠폰 적용이 불가 할 수 있습니다.</p>
-                                <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
-                            </li>
-                            <li>
-                                <h2>‘POCHE 카드탑지퍼 LS’ 경품 증정</h2>
-                                <p>본 경품은 이벤트 기간 내 취향 존중 쿠폰을 사용한 고객에 한 해 추첨 1명 지급됩니다.</p>
-                                <p>당첨자는 2023. 9. 13(수) Jmall 공지사항을 통해 발표됩니다.</p>
-                                <p>본 경품의 제세공과금 22%는 제이에스티나에서 부담합니다.</p>
-                                <p>당첨된 경품은 입력된 주소지로 발송되니 마이페이지 내 회원정보를 최신정보로 업데이트 바랍니다.</p>
-                                <p>회원정보 미입력/오기재 시 경품 당첨 및 지급이 취소 될 수 있습니다.</p>
-                                <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
+            <section class="notice-wrap">
+                <div class="tle close">NOTICE</div>
+                <div class="content-wrap">
+                    <ul class="notice_cont">
+                        <li>
+                            <h2>더블 5% 쿠폰</h2>
+                            <p>본 쿠폰은 이벤트에 참여하여 정답을 맞춘 고객에 한 해 자동 지급 되며, 마이페이지 쿠폰관리에서 확인 가능합니다.</p>
+                            <p>본 더블 쿠폰은 발행일로부터 23. 08 .31까지 사용 가능하며, ID당 1회 다운로드 가능합니다.</p>
+                            <p>사용한 쿠폰은 취소, 반품 시 재발행 되지 않으며 유효기간 내 미 사용 시 자동 소멸됩니다.</p>
+                            <p>본 더블 쿠폰은 7만원 이상 구매 시 사용 가능하며, 일부 상품의 경우 쿠폰 적용이 불가 할 수 있습니다.</p>
+                            <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <h2>‘POCHE 카드탑지퍼 LS’ 경품 증정</h2>
+                            <p>본 경품은 이벤트 기간 내 취향 존중 쿠폰을 사용한 고객에 한 해 추첨 1명 지급됩니다.</p>
+                            <p>당첨자는 2023. 9. 13(수) Jmall 공지사항을 통해 발표됩니다.</p>
+                            <p>본 경품의 제세공과금 22%는 제이에스티나에서 부담합니다.</p>
+                            <p>당첨된 경품은 입력된 주소지로 발송되니 마이페이지 내 회원정보를 최신정보로 업데이트 바랍니다.</p>
+                            <p>회원정보 미입력/오기재 시 경품 당첨 및 지급이 취소 될 수 있습니다.</p>
+                            <p>본 이벤트는 당사의 사정에 의해 예고 없이 변경 또는 종료 될 수 있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
             <a name="contentBottom" class="contentBottom"></a>
         </main>
         <script>

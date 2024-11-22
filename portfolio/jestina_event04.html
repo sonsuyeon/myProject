@@ -50,11 +50,10 @@
                 left: 50%;
                 transform: translateX(-50%);
                 width: 421px;
-                width: 12rem;
-                height: 3rem;
-                background: url(../assets/images/jestina/sweet_day/main_btn-off.png);
+                background-image: url(../assets/images/jestina/sweet_day/main_btn-off.png);
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
+                background-color: transparent;
                 animation: btnEffect 1s linear infinite;
                 cursor: pointer;
             }
@@ -227,26 +226,11 @@
                 }
             }
             @media (max-width: 768px) {
-                .sweet_day .w100 {
-                    width: 100%;
-                    vertical-align: middle;
-                }
                 .sweet_day .jestina-sub-project__wrap {
                     margin: 0 auto;
                     width: 100%;
                     max-width: 960px;
                     min-width: 320px;
-                }
-                .sweet_day .event_sec {
-                    position: relative;
-                    overflow: hidden;
-                }
-                .sweet_day .event_effect-wrap {
-                    display: none;
-                }
-                .sweet_day .event_sec.start .event_effect-wrap {
-                    opacity: 1;
-                    display: block;
                 }
                 .sweet_day .event_link-item {
                     position: absolute;
@@ -255,16 +239,10 @@
                     z-index: 10;
                 }
                 .sweet_day .event_main-btn {
-                    position: absolute;
                     top: 36.4%;
-                    left: 50%;
-                    transform: translateX(-50%);
                     width: 70%;
                     height: 6rem;
-                    background: url(../assets/images/jestina/sweet_day/main_btn-off.png);
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                    animation: btnEffect 1s linear infinite;
+                    background-image: url(../assets/images/jestina/sweet_day/main_btn-off.png);
                 }
                 .sweet_day .event_effec-item {
                     position: absolute;
