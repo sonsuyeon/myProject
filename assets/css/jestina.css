@@ -871,7 +871,7 @@ section .inner {
 #result_box img {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 100%;
 }
 #result_box .mo {
@@ -922,7 +922,7 @@ section .inner {
   bottom: 11%;
   width: 17%;
   height: 19%;
-  background: url(../assets/images/jestina/poche/check_icon.png) no-repeat;
+  background: url(../../assets/images/jestina/poche/check_icon.png) no-repeat;
   background-position: center center;
   background-size: 100% auto;
   padding: 0;
@@ -1060,7 +1060,7 @@ section .inner {
   .IU-Magazine .rolling {
     height: 1rem;
     animation: textSlide 30s linear 0s infinite;
-    background-image: url(../assets/images/jestina/iu_magazine/m_rolling02.png);
+    background-image: url(/../assets/images/jestina/iu_magazine/m_rolling02.png);
     background-size: auto 50%;
   }
   .IU-Magazine .event_link {
@@ -1458,7 +1458,7 @@ section .inner {
     top: 0%;
     width: 17%;
     height: 19%;
-    background: url(../assets/images/jestina/poche/m_check_icon.png) no-repeat;
+    background: url(../../assets/images/jestina/poche/m_check_icon.png) no-repeat;
     background-position: center center;
     background-size: 100% auto;
     padding: 0;
