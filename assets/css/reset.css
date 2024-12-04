@@ -82,6 +82,8 @@ select {
     font: inherit;
     border: none;
     outline: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 textarea:not([rows]) {

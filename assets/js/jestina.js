@@ -11,20 +11,114 @@ document.addEventListener("DOMContentLoaded", function () {
     m_swiper_happyStrap(); // happy_strap
 });
 
+/* TAB SCROLL */
+$(window).scroll(function () {
+    TabCheck2024();
+});
+
+function TabCheck2024() {
+    //스크롤 하단으로 갔을 때 탭 숨김
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > $(".contentBottom").offset().top) {
+            $(".tab").hide();
+            $(".tabV2024").hide();
+        } else {
+            $(".tab").show();
+            $(".tabV2024").show();
+        }
+    });
+
+    $(document).on("scroll", function () {
+        fix_func_2024();
+    });
+
+    function fix_func_2024() {
+        if ($(".jestina-detail__event").hasClass("tabContent2024") == true) {
+            var position = $(window).scrollTop();
+            var nav = $(".tabV2024");
+            var firstSection = $(".jestina-detail__event-wrap");
+
+            // 섹션 요소와 탭의 매핑을 미리 정의
+            var sections = [
+                { id: "#contentV2024_1", tab: ".tab2024_1 a" },
+                { id: "#contentV2024_2", tab: ".tab2024_2 a" },
+                { id: "#contentV2024_3", tab: ".tab2024_3 a" },
+                { id: "#contentV2024_4", tab: ".tab2024_4 a" },
+            ];
+            // 섹션들의 위치를 계산
+            var sectionPositions = sections
+                .map(function (section) {
+                    var element = $(section.id);
+                    return element.length ? { tab: section.tab, top: element.offset().top } : null;
+                })
+                .filter(Boolean); // 존재하지 않는 섹션은 필터링
+
+            $(".tabV2024 a").each(function () {
+                $(this).removeClass("active");
+            });
+
+            // 현재 스크롤 위치에 따라 활성화할 탭을 결정
+            var headerHeight = $(".header.fixed").height() || 0;
+            var navHeight = nav.height() || 0;
+            var offset = headerHeight + navHeight + 35;
+
+            for (var i = sectionPositions.length - 1; i >= 0; i--) {
+                if (position > sectionPositions[i].top - offset) {
+                    $(sectionPositions[i].tab).addClass("active");
+                    break;
+                }
+            }
+
+            // 네비게이션 고정 처리
+            if (firstSection.length && position > firstSection.offset().top - (headerHeight + navHeight)) {
+                nav.addClass("fixed");
+            } else {
+                nav.removeClass("fixed");
+            }
+        }
+        return;
+    }
+}
+
+// popup
+function openModal(modalname, s) {
+    var $element = $("." + modalname),
+        $eInner = $element.find("> .content");
+    $element.fadeIn();
+    $eInner.css({ width: s });
+    $("body, html").css({ overflow: "hidden" });
+    $(window)
+        .resize(function () {
+            var $elementH = $element.height();
+            var $eInnerH = $eInner.outerHeight();
+            var i = $elementH - $eInnerH;
+        })
+        .resize();
+}
+
 function noticeWrap() {
     const noticeWrap = $(".notice-wrap");
     noticeWrap.find(".tle").click(function () {
+        const $currentNoticeWrap = $(this).closest(".notice-wrap");
+        const $contentWrap = $currentNoticeWrap.find(".content-wrap");
+
         if ($(this).hasClass("close")) {
             $(this).removeClass("close").addClass("open");
-            $(this).parent().parent().find(".content-wrap").slideDown(200);
-            return false;
+            $contentWrap.slideDown(200);
         } else {
             $(this).removeClass("open").addClass("close");
-            $(this).parent().parent().find(".content-wrap").slideUp(200);
-            return false;
+            $contentWrap.slideUp(200);
         }
+        return false;
     });
 }
+// POPUP close
+function fn_layer_close(e) {
+    $(e).closest(".layerPop").fadeOut();
+    $("body, html").css({ overflow: "auto" });
+    // location.reload();
+}
+
 function featured__siwperGif1() {
     var swiper = new Swiper(".featured__siwper--gif1", {
         loop: true,
